@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+.inicio-main-div{
+    height: 98.4vh;
+    background-color: aquamarine;
+}
+
+.inicio-header{
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+.inicio-h1{
+    margin-left: 0.5em;
+}
+
+.inicio-header-button{
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 2.5em;
+    margin-right: 1em;
+    height: 2.5em;
+}
+.inicio-login-button{
+    margin-left: auto;
+}   
+
+.inicio-direccion-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: none;
+    height: 70%;
+}

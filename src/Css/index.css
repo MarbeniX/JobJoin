@@ -1,3 +1,5 @@
+@import url('https://www.fontshare.com/fonts/satoshi');
+
 *{
     box-sizing: border-box;
 }
@@ -11,10 +13,21 @@ body{
 }
 
 .inicio-header{
-    background-color: #A9B7B740;
+    background-color: #F7F8F8;
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 4em;
+    border-width: 0.1em;
+    border-style: solid;
+    border-color:#F3FDFD;
 }
+
+.JobJoin-logo{
+    width: 6em;
+    margin-left: 4em;
+}
+
 .inicio-h1{
     margin-left: 0.5em;
 }
@@ -26,6 +39,7 @@ body{
     margin-right: 1em;
     height: 2.5em;
     width: 5em;
+    border: none;
 }
 
 .inicio-login-button{
@@ -36,6 +50,7 @@ body{
 .inicio-signup-button{
     background-color: #023336;
     color: white;
+    margin-right: 4em;
 }
 
 .inicio-direccion-div{
@@ -43,6 +58,42 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: none;
-    height: 70%;
+    text-align: center;
+    height: 70vh;
+}
+
+.PeopleWorking{
+    width: 22em;
+    margin-bottom: 1.5em;
+}
+
+.inicio-direccion-main-h2{
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    letter-spacing: 0.06em;
+}
+
+.inicio-direccion-main-h2-nav{
+    color: #4DA674;
+}
+
+.inicio-correo-button{
+    width: 40em;
+    height: 3em;
+    background-color: white;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    color: #3D845C;
+    border-width: 0.056em;
+    border-style: solid;
+    border-color: #3D845C;
+    border-radius: 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.7em;
+    letter-spacing: 0.07em;
 }

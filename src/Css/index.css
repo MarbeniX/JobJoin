@@ -8,11 +8,10 @@ body{
 
 .inicio-main-div{
     height: 98.4vh;
-    background-color: aquamarine;
 }
 
 .inicio-header{
-    background: transparent;
+    background-color: #A9B7B740;
     display: flex;
     align-items: center;
 }
@@ -23,13 +22,21 @@ body{
 .inicio-header-button{
     font-size: 1em;
     cursor: pointer;
-    border-radius: 2.5em;
+    border-radius: 1em;
     margin-right: 1em;
     height: 2.5em;
+    width: 5em;
 }
+
 .inicio-login-button{
     margin-left: auto;
+    color: black;
 }   
+
+.inicio-signup-button{
+    background-color: #023336;
+    color: white;
+}
 
 .inicio-direccion-div{
     display: flex;

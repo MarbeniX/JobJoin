@@ -7,6 +7,15 @@ export default function Header() {
     function Login() {
         navigate("/login");
     }
+    function Busar(){
+        navigate ("/buscar")
+    }
+    function Google(){
+        navigate("/google")
+    }
+    function Correo(){
+        navigate("/correo")
+    }
     return(
         <div className="inicio-main-div">
             <header className="inicio-header">
@@ -19,7 +28,6 @@ export default function Header() {
                 <main className="inicio-direccion-main">
                         <h2 className="inicio-direccion-main-h2">La persona ideal para el trabajo que necesitas, <nav>en minutos</nav></h2>
                     <div className="inicio-direccion-div-ingreso">
-                        <input type="text" placeholder="Ingresar dirección" className="inicio-direccion-input"/>
                         <button onClick={Login}>Buscar</button> 
                     </div>
                 </main>

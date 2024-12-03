@@ -9,6 +9,7 @@ import EtiquetaLocalizar from '../Images/localizar.png'
 import EtiquetaDescubrir from '../Images/EtiquetaDescubrir.png'
 import EtiquetaMonitorear from '../Images/EtiquetaMonitorear.png'
 import EtiquetaConectar from '../Images/EtiquetaConectar.png'
+import LineaFrame from '../Images/Frame 12.png'
 
 export default function Header() {
     const navigate = useNavigate();
@@ -44,6 +45,7 @@ export default function Header() {
             </div>
 
             <div className="about-main-div">
+                <img src={LineaFrame} alt="Linea separacion" className="about-frame"/>
                 <h3 className="about-main-h3">Descubre más con JobJoin</h3>
                 <p>Encuentra servicios confiables para resolver tus necesidades</p>
             </div>

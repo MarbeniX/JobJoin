@@ -5,6 +5,10 @@ import JobJoinLogo from '../Images/JobJoin.png'
 import PeopleWorking from '../Images/WorkingPeople.png'
 import GoogleLogo from '../Images/GoogleLogo.png'
 import EmailLogo from '../Images/EmailLogo.png'
+import EtiquetaLocalizar from '../Images/localizar.png'
+import EtiquetaDescubrir from '../Images/EtiquetaDescubrir.png'
+import EtiquetaMonitorear from '../Images/EtiquetaMonitorear.png'
+import EtiquetaConectar from '../Images/EtiquetaConectar.png'
 
 export default function Header() {
     const navigate = useNavigate();
@@ -40,21 +44,26 @@ export default function Header() {
             </div>
 
             <div className="about-main-div">
-                <h3>Descubre más con JobJoin</h3>
+                <h3 className="about-main-h3">Descubre más con JobJoin</h3>
                 <p>Encuentra servicios confiables para resolver tus necesidades</p>
-                <div className="about-images">
-                    <div className="about-images-localizar">
-                        <p>Localiza <br />trabajadores <br />cerca de ti.</p>
-                    </div>
-                    <div className="about-iamges-descubrir">
-                        <p>Descubre <br />perfiles <br />detallados.</p>
-                    </div>
-                    <div className="about-images-conectar">
-                        <p>Conecta con <br />los mejores <br />en tu zona</p>
-                    </div>
-                    <div className="about-iamges-monitorear">
-                        <p>Monitorea el <br />avance de tus <br /> proyectos <br /> contratados.</p>
-                    </div>
+            </div>
+        
+            <div className="about-images">
+                <div className="about-images-localizar">
+                    <img src={EtiquetaLocalizar} alt="Etiqueta localizar"/>
+                    <p>Localiza <br />trabajadores <br />cerca de ti.</p>
+                </div>
+                <div className="about-iamges-descubrir">
+                    <img src={EtiquetaDescubrir} alt="Etiqueta descubrir" />
+                    <p>Descubre <br />perfiles <br />detallados.</p>
+                </div>
+                <div className="about-images-conectar">
+                    <img src={EtiquetaConectar} alt="Etiqueta conectar" />
+                    <p>Conecta con <br />los mejores <br />en tu zona</p>
+                </div>
+                <div className="about-iamges-monitorear">
+                    <img src={EtiquetaMonitorear} alt="Etiqueta monitorear" />
+                    <p>Monitorea el <br />avance de tus <br /> proyectos <br /> contratados.</p>
                 </div>
             </div>
 
@@ -68,6 +77,7 @@ export default function Header() {
                     <div className="inicio-footer-div1-Informacion">
                         <h3>Información</h3>
                         <p>Terminos y condiciones</p>
+                        <p>Politica de privacidad</p>
                         <p>Preguntas y condiciones</p>
                     </div>
                 </div>

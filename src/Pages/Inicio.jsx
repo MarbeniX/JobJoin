@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import Header from "../Components/Header.jsx"
+import Footer from "../Components/Footer.jsx"
 import "../Css/index.css";
 import { useNavigate } from "react-router-dom";
-import JobJoinLogo from '../Images/JobJoin.png'
 import PeopleWorking from '../Images/WorkingPeople.png'
 import GoogleLogo from '../Images/GoogleLogo.png'
 import EmailLogo from '../Images/EmailLogo.png'
@@ -11,14 +12,9 @@ import EtiquetaMonitorear from '../Images/EtiquetaMonitorear.png'
 import EtiquetaConectar from '../Images/EtiquetaConectar.png'
 import LineaFrame from '../Images/Frame 12.png'
 
-export default function Header() {
+
+export default function Inicio() {
     const navigate = useNavigate();
-    function Unirse() {
-        navigate("/login");
-    }
-    function Buscar(){
-        navigate ("/buscar")
-    }
     function Google(){
         navigate("/google")
     }
@@ -27,12 +23,7 @@ export default function Header() {
     }
     return(
         <div className="inicio-main-div">
-            <header className="inicio-header">
-                <img src={JobJoinLogo} alt="JobJoin logo" className="JobJoin-logo"/>
-                <button onClick={Buscar} className="inicio-login-button inicio-header-button">Buscar</button>
-                <button onClick={Unirse} className="inicio-signup-button inicio-header-button">Unirse</button>
-            </header>
-
+            <Header />
             <div className="inicio-direccion-div">
                 <main className="inicio-direccion-main">
                         <img src={PeopleWorking} alt="People workiong" className="PeopleWorking"/>
@@ -43,7 +34,6 @@ export default function Header() {
                     </div>
                 </main>
             </div>
-
             <div className="about-main-div">
                 <img src={LineaFrame} alt="Linea separacion" className="about-frame"/>
                 <h3 className="about-main-h3">Descubre más con JobJoin</h3>
@@ -68,38 +58,7 @@ export default function Header() {
                     <p>Monitorea el <br />avance de tus <br /> proyectos <br /> contratados.</p>
                 </div>
             </div>
-
-            <footer className="inicio-footer">
-                <div className="inicio-footer-div1">
-                    <div className="inicio-footer-div1-JobJoin">
-                        <h3>JobJoin</h3>
-                        <p>Acerca de</p>
-                        <p>Contacto</p>
-                    </div>
-                    <div className="inicio-footer-div1-Informacion">
-                        <h3>Información</h3>
-                        <p>Terminos y condiciones</p>
-                        <p>Politica de privacidad</p>
-                        <p>Preguntas y condiciones</p>
-                    </div>
-                </div>
-                <div className="inicio-footer-div2">
-                    <div className="inicio-footer-div2-empleadores">
-                        <h3>Empleadores</h3>
-                        <p>Como contratar</p>
-                        <p>Beneficios</p>
-                    </div>
-                    <div className="inicio-footer-div2-trabajadores">
-                        <h3>Trabajadores</h3>
-                        <p>Beneficios</p>
-                    </div>
-                    <div className="inicio-footer-div2-soporte">
-                        <h3>Soporte</h3>
-                        <p>Ayuda</p>
-                        <p>Reportar un problema</p>
-                    </div>
-                </div>
-            </footer>
+            <Footer/>
         </div>
     )
 }

@@ -33,11 +33,61 @@ export default function Header() {
                         <img src={PeopleWorking} alt="People workiong" className="PeopleWorking"/>
                         <h2 className="inicio-direccion-main-h2">La persona ideal para el <br/> trabajo que necesitas, <br /> <nav className="inicio-direccion-main-h2-nav">en minutos</nav></h2>
                     <div className="inicio-direccion-div-ingreso">
-                        <button onClick={Google} className="inicio-correo-button inicio-google-button"> <img src={GoogleLogo} alt="GoogleLogo CorreoLogo" /> Continuar con Google</button> 
-                        <button onClick={Correo} className="inicio-correo-button inicio-email-button"> <img src={EmailLogo} alt="EmailLogo CorreoLogo" /> Continuar con Email</button>
+                        <button onClick={Google} className="inicio-correo-button inicio-google-button"> <img src={GoogleLogo} className="GoogleLogo CorreoLogo" /> Continuar con Google</button> 
+                        <button onClick={Correo} className="inicio-correo-button inicio-email-button"> <img src={EmailLogo} className="EmailLogo CorreoLogo" /> Continuar con Email</button>
                     </div>
                 </main>
             </div>
+
+            <div className="about-main-div">
+                <h3>Descubre más con JobJoin</h3>
+                <p>Encuentra servicios confiables para resolver tus necesidades</p>
+                <div className="about-images">
+                    <div className="about-images-localizar">
+                        <p>Localiza <br />trabajadores <br />cerca de ti.</p>
+                    </div>
+                    <div className="about-iamges-descubrir">
+                        <p>Descubre <br />perfiles <br />detallados.</p>
+                    </div>
+                    <div className="about-images-conectar">
+                        <p>Conecta con <br />los mejores <br />en tu zona</p>
+                    </div>
+                    <div className="about-iamges-monitorear">
+                        <p>Monitorea el <br />avance de tus <br /> proyectos <br /> contratados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer className="inicio-footer">
+                <div className="inicio-footer-div1">
+                    <div className="inicio-footer-div1-JobJoin">
+                        <h3>JobJoin</h3>
+                        <p>Acerca de</p>
+                        <p>Contacto</p>
+                    </div>
+                    <div className="inicio-footer-div1-Informacion">
+                        <h3>Información</h3>
+                        <p>Terminos y condiciones</p>
+                        <p>Preguntas y condiciones</p>
+                    </div>
+                </div>
+                <div className="inicio-footer-div2">
+                    <div className="inicio-footer-div2-empleadores">
+                        <h3>Empleadores</h3>
+                        <p>Como contratar</p>
+                        <p>Beneficios</p>
+                    </div>
+                    <div className="inicio-footer-div2-trabajadores">
+                        <h3>Trabajadores</h3>
+                        <p>Beneficios</p>
+                    </div>
+                    <div className="inicio-footer-div2-soporte">
+                        <h3>Soporte</h3>
+                        <p>Ayuda</p>
+                        <p>Reportar un problema</p>
+                    </div>
+                </div>
+            </footer>
         </div>
     )
 }

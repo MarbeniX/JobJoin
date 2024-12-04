@@ -5,7 +5,7 @@ function RecuperarContrasena() {
         <div className="inicio-main-div">
             <header className="inicio-header">
                 <img
-                    src="/logo.png"
+                    src="/Images/JobJoin.png"
                     alt="JobJoin Logo"
                     className="JobJoin-logo"
                 />
@@ -19,7 +19,7 @@ function RecuperarContrasena() {
             </header>
             <div className="inicio-direccion-div">
                 <img
-                    src="/PeopleWorking.png"
+                    src="/formulario.png"
                     alt="People working"
                     className="PeopleWorking"
                 />

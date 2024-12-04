@@ -5,12 +5,12 @@ import "../Css/index.css";
 import { useNavigate } from "react-router-dom";
 import PeopleWorking from '../Images/WorkingPeople.png'
 import GoogleLogo from '../Images/GoogleLogo.png'
-import EmailLogo from '../Images/EmailLogo.png'
 import EtiquetaLocalizar from '../Images/localizar.png'
 import EtiquetaDescubrir from '../Images/EtiquetaDescubrir.png'
 import EtiquetaMonitorear from '../Images/EtiquetaMonitorear.png'
 import EtiquetaConectar from '../Images/EtiquetaConectar.png'
 import LineaFrame from '../Images/Frame 12.png'
+import DividorFrame from '../Images/InicioDivisor.png'
 
 
 export default function Inicio() {
@@ -30,7 +30,17 @@ export default function Inicio() {
                         <h2 className="inicio-direccion-main-h2">La persona ideal para el <br/> trabajo que necesitas, <br /> <nav className="inicio-direccion-main-h2-nav">en minutos</nav></h2>
                     <div className="inicio-direccion-div-ingreso">
                         <button onClick={Google} className="inicio-correo-button inicio-google-button"> <img src={GoogleLogo} className="GoogleLogo CorreoLogo" /> Continuar con Google</button> 
-                        <button onClick={Correo} className="inicio-correo-button inicio-email-button"> <img src={EmailLogo} className="EmailLogo CorreoLogo" /> Continuar con Email</button>
+                        <img src={DividorFrame} alt="" />
+                        <div className="inicio-nombre-apellido">
+                            <input type="text" placeholder="Nombre (obligatorio)" className="inicio-nombre-input"/>
+                            <input type="text" placeholder="Apellido (obligatorio)" className="inicio-apellido-input"/>
+                        </div>
+                        <input type="text" placeholder="ejemplo@gmail.com" className="inicio-email"/>
+                        <input type="text" placeholder="Contraseña" className="inicio-contraseña"/>
+                        <h4 className="inicio-h4">
+                            ¿Ya tienes una cuenta? Da click <nav>aquí</nav>
+                        </h4>
+                        <p className="terminos-condiciones">Al registrarte, aceptas nuestro <nav>Aviso de privacidad</nav> y consientes el tratamiento de tus datos según lo establecido con nuestros <nav>Términos y condiciones</nav>.</p>
                     </div>
                 </main>
             </div>

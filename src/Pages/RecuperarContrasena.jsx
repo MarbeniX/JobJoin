@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react';
+import '../Css/index.css';
+import JobJoin from "../Images/JobJoin.png";
+import formulario from "../Images/formulario.png";
 
 function RecuperarContrasena() {
     return (
         <div className="inicio-main-div">
             <header className="inicio-header">
-                <img
-                    src="/Images/JobJoin.png"
-                    alt="JobJoin Logo"
-                    className="JobJoin-logo"
-                />
+                <img src={JobJoin} alt="Imagen de Recuperar Contraseña" />
                 <h1 className="inicio-h1">Recupera tu cuenta</h1>
                 <button className="inicio-header-button inicio-login-button">
                     Iniciar sesión
@@ -19,7 +18,7 @@ function RecuperarContrasena() {
             </header>
             <div className="inicio-direccion-div">
                 <img
-                    src="/formulario.png"
+                    src={formulario}
                     alt="People working"
                     className="PeopleWorking"
                 />

@@ -1,75 +1,25 @@
-/* Reset básico */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Satoshi', sans-serif;
-  }
-  
-  /* Header principal */
-  .inicio-header {
-    position: fixed; /* Hace que el header permanezca en la parte superior */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ocupa todo el ancho de la ventana */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Separa la imagen y los botones */
-    background-color: #F7F8F8;
-    padding: 0.5rem 1rem; /* Espaciado alrededor */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar separación visual */
-    z-index: 1000; /* Asegura que el header esté sobre otros elementos */
-  }
-  
-  /* Imagen del logo */
-  .JobJoin-logo {
-    width: 8rem; /* Tamaño de la imagen */
-    height: auto;
-    margin-left: 7rem; /* Asegura que el logo tenga espacio a la derecha */
-  }
-  
-  /* Contenedor de botones */
-  .inicio-header-botones {
-    display: flex;
-    gap: 0.5rem; /* Espaciado entre los botones */
-    align-items: center;
-  }
-  
-  /* Estilo general de botones */
-  .inicio-header-button {
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    border: 1px solid transparent;
-  }
-  
-  /* Botón "Buscar" */
-  .inicio-login-button {
-    color: #023336;
-    background-color: transparent;
-  }
-  
-  /* Botón "Iniciar sesión" */
-  .inicio-signup-button {
-    color: #3D845C;
-    margin-right: 7rem;
-  }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .inicio-header {
-      flex-direction: row; /* Mantiene el diseño horizontal */
-      padding: 0.5rem;
-    }
-  
-    .JobJoin-logo {
-      width: 6rem; /* Reduce el tamaño del logo */
-    }
-  
-    .inicio-header-botones {
-      gap: 0.3rem; /* Reduce el espacio entre botones */
-    }
-  }
-  
+.inicio-main-div{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+}
+.inicio-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  background-color: #F7F8F8;
+}
+.inicio-header img{
+  width: 6rem;
+  margin-left: 7%;
+}
+.header-links{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10%;
+  background-color: transparent;
+  margin-right: 7%;
+  width: fit-content;
+}

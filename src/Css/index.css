@@ -1,5 +1,5 @@
 .inicio-main-div{
-    height: 100vh;
+  height: 100vh;
     width: 100vw;
     background-color: white;
 }
@@ -7,8 +7,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10%;
   background-color: #F7F8F8;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 .inicio-header img{
   width: 6rem;
@@ -17,9 +17,171 @@
 .header-links{
   display: flex;
   flex-direction: row;
+  gap: 25%;
   align-items: center;
-  gap: 10%;
   background-color: transparent;
-  margin-right: 7%;
-  width: fit-content;
+  margin-right: 12%;
+  white-space: nowrap;
+}
+.inicio-link{
+  text-decoration: none;
+}
+.inicio-login-button{
+  color: #023336;
+}
+.inicio-signup-button{
+  color: #3D845C;
+}
+.inicio-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inicio-presentacion-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.inicio-presentacion-div h1{
+  font-size: 2rem;
+  color: #023336;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.inicio-presentacion-div nav{
+  color: #4DA674;
+}
+.inicio-presentacion-div img{
+  width: 50%;
+}
+.inicio-inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.inicio-button-google{
+  border-color: #4DA674;
+  border-style: solid;
+  border-width: 0.01em;
+  background-color: transparent;
+  border-radius: 0.5em;
+  width: 100%;
+  color: #3D845C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.inicio-frame{
+  width: 100%;
+}
+.input-data{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+}
+.input-nombre-apellido{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+.input-email-contraseña{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+}
+.input-nombre-apellido input, .input-email-contraseña input{
+  flex-grow: 1;
+  background-color: #E9ECEC;
+  border: none;
+  padding: 2%;
+  border-radius: 0.5em;
+}
+.input-nombre-apellido input::placeholder, .input-email-contraseña input::placeholder{
+  color: rgba(0, 0, 0, 0.3); /* Gris claro */
+  opacity: 1;
+}
+.input-more-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.input-more-info h3{
+  font-weight: 400;
+  color: #023336;
+  letter-spacing: 1.5px;
+}
+.input-more-info h3 nav{
+  display: inline;
+  color: #05888F;
+  cursor: pointer;
+}
+.input-more-info p{
+  margin-top: 0;
+  text-align: justify;
+  font-size: 0.6rem;
+  margin-bottom: 1rem;
+}
+.input-more-info button{
+  background-color: #023336;
+  color: white;
+  padding: 2%;
+  border-radius: 1em;
+  cursor: pointer;
+}
+.inicio-about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.about-txt h3{
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #023336;
+  margin-bottom: 0.5em;
+}
+.about-txt p{
+  font-size: 0.8rem;
+  color: #023336;
+  margin-top: 0;
+}
+.about-images{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  width: 100%;
+}
+.about-images div{
+  width: 25%;
+}
+.inicio-footer{
+  width: 100%;
+  background-color: #023336;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2%;
+  font-size: 0.6rem;
+  font-weight: 400;
 }

@@ -33,6 +33,34 @@ body {
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inicio-login-button{
+    margin-left: auto;
+    color: black;
+}
+
+.inicio-signup-button{
+    color: #3D845C;
+    margin-right: 10%;
+}
+
+.inicio-direccion-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 70vh;
+}
+
+.PeopleWorking{
+    width: 22em;
+    margin-bottom: 1.5em;
+}
+
+.inicio-direccion-main-h2{
     font-family: 'Satoshi', sans-serif;
     padding: 0.5rem 1rem;
     border-radius: 0.3rem;

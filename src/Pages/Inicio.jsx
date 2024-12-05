@@ -14,17 +14,9 @@ import DividorFrame from '../Images/InicioDivisor.png'
 
 
 export default function Inicio() {
-    const navigate = useNavigate();
-    function Google(){
-        navigate("/google")
-    }
-    function Correo(){
-        navigate("/correo")
-    }
     return(
         <div className="inicio-main-div">
             <Header />
-            <Footer/>
         </div>
     )
 }

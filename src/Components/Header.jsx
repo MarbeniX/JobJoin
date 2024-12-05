@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 export default function Header() {
     return(
         <header className="inicio-header">
-            <img src={JobJoinLogo} alt="JobJoin logo" className="JobJoin-logo"/>
-            <Link  to="/Buscar" className="inicio-login-button inicio-header-button">Buscar</Link>
-            <Link  to="/IniciarSesion" className="inicio-signup-button inicio-header-button">Iniciar sesión</Link>
-        </header>
+            <img src={JobJoinLogo} alt="JobJoin logo" className="JobJoin-logo" />
+            <div className="inicio-header-botones">
+            <Link to="/Buscar" className="inicio-login-button inicio-header-button">Buscar</Link>
+            <Link to="/IniciarSesion" className="inicio-signup-button inicio-header-button">Iniciar sesión</Link>
+            </div>
+        </header> 
     )
 }

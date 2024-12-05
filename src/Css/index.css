@@ -1,95 +1,75 @@
-@import url('https://www.fontshare.com/fonts/satoshi');
-/* General reset */
+/* Reset básico */
 body {
-    background-color: white;
     margin: 0;
-}  
-/* Header principal */
-.inicio-header {
+    padding: 0;
+    font-family: 'Satoshi', sans-serif;
+  }
+  
+  /* Header principal */
+  .inicio-header {
+    position: fixed; /* Hace que el header permanezca en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separa la imagen y los botones */
     background-color: #F7F8F8;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Distribuye los elementos: logo a la izquierda y botones a la derecha */
-    padding: 0.5rem 1rem;
-}
-
-/* Logo */
-.JobJoin-logo {
-    width: 8rem; /* Tamaño del logo */
+    padding: 0.5rem 1rem; /* Espaciado alrededor */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar separación visual */
+    z-index: 1000; /* Asegura que el header esté sobre otros elementos */
+  }
+  
+  /* Imagen del logo */
+  .JobJoin-logo {
+    width: 8rem; /* Tamaño de la imagen */
     height: auto;
-    margin-left: 3rem;
-}
-
-/* Contenedor para los botones */
-.inicio-header-botones {
+    margin-left: 7rem; /* Asegura que el logo tenga espacio a la derecha */
+  }
+  
+  /* Contenedor de botones */
+  .inicio-header-botones {
     display: flex;
-    gap: 0.5rem; /* Espacio entre los botones */
+    gap: 0.5rem; /* Espaciado entre los botones */
     align-items: center;
-}
-
-/* Estilo común para los botones */
-.inicio-header-button {
+  }
+  
+  /* Estilo general de botones */
+  .inicio-header-button {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.inicio-login-button{
-    margin-left: auto;
-    color: black;
-}
-
-.inicio-signup-button{
-    color: #3D845C;
-    margin-right: 10%;
-}
-
-.inicio-direccion-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 70vh;
-}
-
-.PeopleWorking{
-    width: 22em;
-    margin-bottom: 1.5em;
-}
-
-.inicio-direccion-main-h2{
-    font-family: 'Satoshi', sans-serif;
     padding: 0.5rem 1rem;
     border-radius: 0.3rem;
     border: 1px solid transparent;
-}
-
+  }
+  
   /* Botón "Buscar" */
-.inicio-login-button {
-    color: black;
+  .inicio-login-button {
+    color: #023336;
     background-color: transparent;
-}
+  }
+  
   /* Botón "Iniciar sesión" */
-.inicio-signup-button {
+  .inicio-signup-button {
     color: #3D845C;
-    background-color: transparent;
-    margin-right: 4rem;
-}
-/* Responsividad */
-@media (max-width: 768px) {
-.inicio-header {
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    align-items: flex-start;
-}
-
-.inicio-header-botones {
-    width: 100%;
-    justify-content: flex-end; /* Alinea los botones a la derecha */
-}
-.JobJoin-logo {
+    margin-right: 7rem;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .inicio-header {
+      flex-direction: row; /* Mantiene el diseño horizontal */
+      padding: 0.5rem;
+    }
+  
+    .JobJoin-logo {
       width: 6rem; /* Reduce el tamaño del logo */
     }
-}  
+  
+    .inicio-header-botones {
+      gap: 0.3rem; /* Reduce el espacio entre botones */
+    }
+  }
+  

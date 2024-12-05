@@ -3,6 +3,7 @@ import Header from "../Components/Header.jsx";
 import Footer from "../Components/Footer.jsx";
 import PeopleWorking from '../Images/WorkingPeople.png';
 import GoogleLogo from '../Images/GoogleLogo.png';
+import "../Css/index.css";
 
 
 export default function Inicio() {

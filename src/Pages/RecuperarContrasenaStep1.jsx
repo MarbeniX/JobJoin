@@ -8,11 +8,7 @@ function RecuperarContrasena() {
     return (
         <>
             <header>
-                <div>
-                    <div>
-                        <img src={JobJoin} alt="Ilustración"/>
-                    </div>
-                </div>
+                    <img src={JobJoin} alt="Ilustración"/>
             </header>
             <main>
                 <div className="container">
@@ -28,10 +24,10 @@ function RecuperarContrasena() {
                             <div className="form-group">
                                 <input type="email" placeholder="Escribe el código que enviamos a tu correo" required/>
                             </div>
-                            <div>
-                                <a href={RecuperarContrasena}>Reenviar código        </a>
+                            <div className="links-container">
+                                <a href="https://www.mozilla.org/es-ES/" className="left-link">Reenviar código        </a>
 
-                                <a href={RecuperarContrasena}>Editar correo ingresado</a>
+                                <a href="https://www.mozilla.org/es-ES/" className="right-link">Editar correo ingresado</a>
                             </div>
 
                             <div className="form-group">

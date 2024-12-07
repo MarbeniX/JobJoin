@@ -9,9 +9,7 @@ function RecuperarContrasena() {
         <>
             <header>
                 <div>
-                    <div>
-                        <img src={JobJoin} alt="Ilustración"/>
-                    </div>
+                    <img src={JobJoin} alt="Ilustración"/>
                 </div>
             </header>
             <main>

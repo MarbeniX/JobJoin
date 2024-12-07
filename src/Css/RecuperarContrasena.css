@@ -3,15 +3,17 @@
 
 
 header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     background-color: #f8f9fa;
-    padding: 0px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%;
+}
+header > div {
+    margin: 0;
+    padding: 0;
 }
 
 .illustration img {
-    max-width: 1%;
+    max-width: 100%;
     height: auto;
     object-fit: contain;
 }
@@ -34,6 +36,7 @@ body {
     align-items: center;
     height: 90%;
     text-align: center;
+    padding: 50px;
 }
 .card {
     width: 100%;
@@ -91,4 +94,23 @@ body {
 }
 .form-group button:hover {
     background-color: #047857;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Ajusta según tu diseño */
+}
+
+.left-link {
+    text-align: left;
+    color: #064e3b;
+    text-decoration: none; /*Elimina el subrayado brah*/
+
+}
+
+.right-link {
+    text-align: right;
+    color: #064e3b;
+    text-decoration: none; /*Elimina el subrayado brah*/
 }

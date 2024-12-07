@@ -7,6 +7,7 @@ import EtiquetaConectar from "../Images/EtiquetaConectar.png";
 import EtiquetaDescubrir from "../Images/EtiquetaDescubrir.png";
 import EtiquetaLocalizar from "../Images/localizar.png";
 import EtiquetaMonitorear from "../Images/EtiquetaMonitorear.png";
+import AboutFrame from "../Images/About Frame.png"
 import "../Css/index.css";
 
 
@@ -34,6 +35,7 @@ export default function Inicio() {
                         </div>
                     </div>
                     <div className="input-more-info">
+                        <img src="" alt="" />
                         <h3>¿Ya tienes cuenta? Da click <nav>aquí</nav></h3>
                         <p>Al registrarte, aceptas nuestro Aviso de privacidad y consientes el tratamiento de tus datos según lo establecido con nuestros Términos y condiciones.</p>
                         <button>Continuar</button>
@@ -41,6 +43,7 @@ export default function Inicio() {
                 </div>
                 <div className="inicio-about">
                     <div className="about-txt">
+                        <img src={AboutFrame} alt="About Frame" className="AboutFrame"/>
                         <h3>Desbubre más con JobJoin</h3>
                         <p>Encuentra servicios confiables para resolver tus necesidades</p>
                     </div>

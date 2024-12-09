@@ -2,14 +2,13 @@
 import "../Css/RecuperarContrasena.css"
 import JobJoin from "../Images/JobJoin.png";
 import formulario from "../Images/formulario.png";
+import Header from "../Components/HeaderRecuperarContraseña";
 
 
 function RecuperarContrasena() {
     return (
-        <>
-            <header>
-                    <img src={JobJoin} alt="Ilustración"/>
-            </header>
+        <div className="recuperar-contraseña-div">
+            <Header/>
             <main>
                 <div className="container">
                     <img src={formulario} alt="Ilustración"/>
@@ -37,7 +36,7 @@ function RecuperarContrasena() {
                     </div>
                 </div>
             </main>
-        </>
+        </div>
     );
 }
 

@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="footer-info">
                 <h4>Información</h4>
                 <p>Términos y condiciones</p>
-                <p>Política de privacidad</p>s
+                <p>Política de privacidad</p>
                 <p>Preguntas y condiciones</p>
             </div>
             <div className="footer-info">

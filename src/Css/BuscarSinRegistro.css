@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.BuscarSinRegistro-div{
+    width: 100vw;
+    height: 100vh;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    background-color: #F7F8F8;
+    height: 60px;
+}
+header > img{
+    width: 6rem;
+    margin-left: 7%;
+}
+header > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    white-space: nowrap;
+    width: 20%;
+    margin-right: 5%;
+}
+.IniciarSesión-button, .Unirse-button{
+    background-color: transparent;
+    border: none;
+    border-radius: 1rem;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    width: 109px;
+    height: 44px;
+}
+.IniciarSesión-button{
+    color: #3D845C;
+}
+.Unirse-button{
+    color: white;
+    background-color: #4DA674;
+}
+.InfoAbout, .Perfiles, .MostrarMasPefiles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

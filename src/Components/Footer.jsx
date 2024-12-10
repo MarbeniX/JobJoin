@@ -1,4 +1,4 @@
-import "../Css/index.css";
+import "../Css/FooterHeaderInicio.css";
 
 export default function Footer() {
     return(
@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="footer-info">
                 <h4>Información</h4>
                 <p>Términos y condiciones</p>
-                <p>Política de privacidad</p>
+                <p>Política de privacidad</p>s
                 <p>Preguntas y condiciones</p>
             </div>
             <div className="footer-info">

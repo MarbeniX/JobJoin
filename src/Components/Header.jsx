@@ -1,4 +1,4 @@
-import "../Css/index.css";
+import "../Css/FooterHeaderInicio.css";
 import JobJoinLogo from '../Images/JobJoin.png'
 import { Link } from "react-router-dom";
 

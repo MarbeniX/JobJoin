@@ -3,31 +3,7 @@
     width: 100vw;
     background-color: white;
 }
-.inicio-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #F7F8F8;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  width: 100%;
-  height: 6%;
-}
-.inicio-header img{
-  width: 6rem;
-  margin-left: 7%;
-}
-.header-links{
-  display: flex;
-  flex-direction: row;
-  gap: 25%;
-  align-items: center;
-  background-color: transparent;
-  margin-right: 12%;
-  white-space: nowrap;
-}
-.inicio-link{
-  text-decoration: none;
-}
+
 .inicio-login-button{
   color: #023336;
 }
@@ -185,14 +161,4 @@
 .about-images div{
   width: 25%;
 }
-.inicio-footer{
-  width: 100%;
-  background-color: #023336;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2%;
-  font-size: 0.6rem;
-  font-weight: 400;
-}
+

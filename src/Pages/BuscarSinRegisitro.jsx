@@ -29,7 +29,7 @@ export default function BuscarSinRegistro() {
                     </div>
                     <button className='InfoBuscarButton'>Buscar</button>
                     <div className='InfoText'>
-                        <h4>Explora algunos perfiles</h4>
+                        <h3>Explora algunos perfiles</h3>
                         <p>Aquí están los expertos listos para apoyarte en tusproyectos.</p>
                     </div>
                 </div>

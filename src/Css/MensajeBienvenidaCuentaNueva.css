@@ -24,9 +24,21 @@
     width: 437px;
     height: 68px;
 }
-.CuentaNueva-inicio > img{
+.HappyGreenFace{
     width: 64px;
     height: 64px;
+}
+.MailIcon{
+    width: 53.33px;
+    height: 42.67px;
+}
+.ErrorIcon{
+    width: 53.33px;
+    height: 53.33px;
+}
+.CandadoIcon{
+    width: 42.67px;
+    height: 53.33px;
 }
 .CuentaNueva-mensaje{
     display: flex;
@@ -42,9 +54,12 @@
     gap: 15px;
     margin-left: 40%;
 }
+.MRBotones{
+    margin-left: 65%;
+}
 .CN-B-iniciar{
-    background-color: #CFECCA;
-    color: #3D845C;
+    background-color: #F3FDFD;
+    color: #023336;
     width: 137px;
     height: 40px;
     border-radius: 1rem;
@@ -57,4 +72,7 @@
     border: none;
     color: #023336;
     font-size: 17px;
+}
+.CorreoUsuario{
+    opacity: 0.3;
 }

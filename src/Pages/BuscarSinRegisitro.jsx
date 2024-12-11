@@ -3,7 +3,8 @@ import JobJoin from '../Images/JobJoin.png';
 import LupaIcon from "../Images/LupaLogo.png";
 import VectorIcon from "../Images/VectorIcon.png";
 import FlechaIcon from "../Images/FlechaIcon.png";
-import Footer from "../Components/Footer.jsx"
+import Footer from "../Components/Footer.jsx";
+import PerfilTrabajadorViñeta from '../Components/PerfilTrabajadorViñeta.jsx';
 
 export default function BuscarSinRegistro() {
     return(
@@ -35,6 +36,19 @@ export default function BuscarSinRegistro() {
                 </div>
             </div>
             <div className='Perfiles'>
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
             </div>
             <div className='MostrarMasPefiles'>
                 <button>Mostrar más perfiles</button>

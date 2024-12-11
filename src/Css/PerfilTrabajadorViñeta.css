@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.MainDiv{
+    width: 357px;
+    height: 315px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.Costo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+}
+.Costo > nav{
+    font-size: 13px;
+    background-color: #F3FDFD;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    color: #023336;
+}
+.Costo > nav > img{
+    margin-right: 0.3em;
+}
+.Costo > div{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.p1{
+    font-size: 10px;
+}
+.Perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.Perfil > img{
+    width: 60px;
+    height: 60px;
+}
+.PerfilInfo > p{
+    font-weight: 600;
+}
+.PerfilUbicación{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.PerfilUbicación > p{
+    color: #7A8F8F;
+    opacity: 0.7;
+    font-size: 10px;
+    padding-left: 0.5em;
+    padding-right: 3em;
+}
+.Disponibilidad{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+}
+.DiasSemana, .Horario{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.DispobilidadP1{
+    font-weight: 400;
+    opacity: 0.2;
+    font-size: 14px;
+}
+.DiasSemanaInfo{
+    background-color: #E9ECEC;
+    border-style: solir;
+    border-radius: 0.2rem;
+    width: 134px;
+    padding-left: 0.5rem;
+}
+.ViñetaText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    gap: 0.3rem;
+}
+.ViñetaText > p{
+    font-size: 10px;
+    opacity: 0.5;
+}
+.ContactoBotones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+}
+.ContactoBotones > button{
+    background-color: transparent;    
+    padding: 0.6rem;
+}
+.ContactoPerfil{
+    border: none;
+    color: #05888F;
+}
+.ContactoContactar{
+    border-style: solid;
+    border-color: #4DA674;
+    border-radius: 0.5rem;
+    color: #3D845C;
+}

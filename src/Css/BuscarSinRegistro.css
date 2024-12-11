@@ -26,19 +26,19 @@ header > div{
     justify-content: space-between;
     background-color: transparent;
     white-space: nowrap;
-    width: 18%;
     margin-right: 5%;
+    gap: 30px;
 }
-.IniciarSesión-button, .Unirse-button{
+.IniciarSesión-button,.Unirse-button{
     background-color: transparent;
     border: none;
     border-radius: 1rem;
     font-size: 17px;
     font-weight: 400; 
     letter-spacing: 1px;
-    width: 109px;
-    height: 44px;
+    padding: 0.8rem;
 }
+
 .IniciarSesión-button{
     color: #3D845C;
 }
@@ -148,4 +148,14 @@ header > div{
     border-style: solid;
     border-width: 0.1rem;
     background-color: transparent;
+}
+.Perfiles{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin-right: 8%;
+    margin-left: 8%;
+    margin-bottom: 2rem;
 }

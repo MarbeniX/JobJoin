@@ -1,15 +1,18 @@
+import '../Css/PerfilTrabajadorViñeta.css';
 import PerfilTrabajador from "../Images/PerfilTrabajador.png";
 import UbicaciónIcon from "../Images/UbicaciónIcon.png";
 import Stars from "../Images/Stars.png";
 import InfoIcon from "../Images/InfoIcon.png";
+import CategoriaIcon from "../Images/CategoriaIcon.png";
 
 export default function PerfilTrabajadorViñeta() {
     return(
         <div className='MainDiv'>
             <div className='Costo'>
-                <p>Categoria</p>
+                <nav> <img src={CategoriaIcon} alt="CategoriaIcon" />Plomería</nav>
                 <div>
-                    <p>Desde <nav>$xxx</nav></p>
+                    <p className='p1'>Desde</p>
+                    <p>$250</p>
                 </div>
             </div>
             <div className='Perfil'>
@@ -19,27 +22,27 @@ export default function PerfilTrabajadorViñeta() {
                     <div className='PerfilUbicación'>
                         <img src={UbicaciónIcon} alt="UbicaciónIcon" />
                         <p>Cuauhtémoc, CDMX</p>
+                        <img src={Stars} alt="StarsRating" />
                     </div>
-                    <img src={Stars} alt="StarsRating" />
                 </div>
             </div>
             <div className='Disponibilidad'>
                 <div className='DiasSemana'>
-                    <p>Disponibilidad</p>
-                    <p>Lunes</p>
+                    <p className='DispobilidadP1'>Disponibilidad</p>
+                    <p className='DiasSemanaInfo'>Lunes</p>
                 </div>
                 <div className='Horario'>
-                    <p>Horario</p>
-                    <p>9:00 AM - 5:00 PM</p>
+                    <p className='DispobilidadP1'>Horario</p>
+                    <p className='HorarioInfo'>9:00 AM - 5:00 PM</p>
                 </div>
             </div>
-            <div className='InfoText'>
+            <div className='ViñetaText'>
                 <img src={InfoIcon} alt="InfoIcon" />
                 <p>Más días y horarios diponibles en el perfil</p>
             </div>
             <div className='ContactoBotones'>
-                <button>Ver perfil</button>
-                <button>Contactar</button>
+                <button className='ContactoPerfil'>Ver perfil</button>
+                <button className='ContactoContactar'>Contactar</button>
             </div>
         </div>
     )

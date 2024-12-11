@@ -26,7 +26,7 @@ header > div{
     justify-content: space-between;
     background-color: transparent;
     white-space: nowrap;
-    width: 20%;
+    width: 18%;
     margin-right: 5%;
 }
 .IniciarSesión-button, .Unirse-button{
@@ -34,7 +34,7 @@ header > div{
     border: none;
     border-radius: 1rem;
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 400; 
     letter-spacing: 1px;
     width: 109px;
     height: 44px;
@@ -51,4 +51,38 @@ header > div{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.InfoAbout{
+    padding-top: 2rem;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+.InfoAbout > h1{
+    width: 700;
+    font-size: 50px;
+}
+.InfoInputs{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.InfoProfesión, .InfoFiltro{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1F3F3;
+}
+.InfoProfesión > input{
+    background-color: transparent;
+    border: none;   
+    width: 100%;
+}
+.InfoFiltro > button{
+    background-color: transparent;
+    border: none;
+    width: 100%;
 }

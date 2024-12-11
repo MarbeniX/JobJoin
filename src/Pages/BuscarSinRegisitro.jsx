@@ -25,12 +25,7 @@ export default function BuscarSinRegistro() {
                     </div>
                     <div className='InfoFiltro'>
                         <img src={VectorIcon} alt="VectorIcon" />
-                        <button className='InfoMasFiltros'>Más filtros</button>
-                        <ul>
-                            <li>Opción 1</li>
-                            <li>Opción 2</li>
-                            <li>Opción 3</li>
-                        </ul>
+                        <button>Más filtros</button>
                     </div>
                     <button className='InfoBuscarButton'>Buscar</button>
                     <div className='InfoText'>

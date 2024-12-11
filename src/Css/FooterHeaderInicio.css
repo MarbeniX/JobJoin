@@ -32,12 +32,9 @@
   }
   .header-links{
     display: flex;
-    flex-direction: row;
-    gap: 25%;
-    align-items: center;
     background-color: transparent;
-    margin-right: 12%;
     white-space: nowrap;
+    width: 15rem;
   }
   .inicio-link{
     text-decoration: none;

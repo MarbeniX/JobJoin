@@ -1,4 +1,3 @@
-import '../Css/PerfilTrabajadorViñeta.css';
 import PerfilTrabajador from "../Images/PerfilTrabajador.png";
 import UbicaciónIcon from "../Images/UbicaciónIcon.png";
 import Stars from "../Images/Stars.png";

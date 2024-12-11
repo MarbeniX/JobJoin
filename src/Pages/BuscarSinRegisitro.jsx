@@ -48,7 +48,7 @@ export default function BuscarSinRegistro() {
                 <PerfilTrabajadorViñeta />
                 <PerfilTrabajadorViñeta />
                 <PerfilTrabajadorViñeta />
-                <PerfilTrabajadorViñeta />
+
             </div>
             <div className='MostrarMasPefiles'>
                 <button>Mostrar más perfiles</button>

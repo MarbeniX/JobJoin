@@ -18,7 +18,7 @@ export default function PerfilTrabajadorViñeta() {
             <div className='Perfil'>
                 <img src={PerfilTrabajador} alt="PerfilTrabajador"/>
                 <div className='PerfilInfo'>
-                    <p>Juan Pérez</p>
+                    <p>Berlin Pérez</p>
                     <div className='PerfilUbicación'>
                         <img src={UbicaciónIcon} alt="UbicaciónIcon" />
                         <p>Cuauhtémoc, CDMX</p>

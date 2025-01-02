@@ -1,5 +1,5 @@
-import "../Css/FooterHeaderInicio.css";
-import JobJoinLogo from '../Images/JobJoin.png'
+import "../../Css/Headers&Footer.css";
+import JobJoinLogo from '../../Images/JobJoin.png'
 import { Link } from "react-router-dom";
 
 export default function Header() {

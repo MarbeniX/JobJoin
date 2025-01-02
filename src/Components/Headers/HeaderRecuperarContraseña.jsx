@@ -1,4 +1,4 @@
-import JobJoinLogo from "../Images/JobJoin.png";
+import JobJoinLogo from "../../Images/JobJoin.png";
 
 export default function HeaderRecuperarContraseña() {
     return(

@@ -1,4 +1,4 @@
-import "../Css/FooterHeaderInicio.css";
+import "../Css/Headers&Footer.css";
 
 export default function Footer() {
     return(

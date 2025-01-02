@@ -1,6 +1,5 @@
-
 import "../Css/RecuperarContrasena.css"
-import Header from "../Components/HeaderRecuperarContraseña"
+import Header from "../Components/Headers/HeaderRecuperarContraseña"
 import formulario from "../Images/formulario.png";
 
 

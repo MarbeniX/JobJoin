@@ -1,7 +1,7 @@
 
 import "../Css/RecuperarContrasena.css"
 import formulario from "../Images/formulario.png";
-import Header from "../Components/HeaderRecuperarContraseña";
+import Header from "../Components/Headers/HeaderRecuperarContraseña";
 
 
 function RecuperarContrasena() {

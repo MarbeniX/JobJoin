@@ -10,6 +10,7 @@ import MensajeCodigoIncorrecto from "../Messages/MensajeCodigoIncorrecto"
 import MensajeContraseñaActualizada from "../Messages/MensajeContraseñaActualizada"
 import CrearNuevaContraseña from "./CrearUnaNuevaContraseña"
 import MensajeIniciarSesiónParaContinuar from "../Messages/MensajeIniciarSesiónParaContinuar"
+import HeaderSesiónIniciada from "../Components/Headers/HeaderSesiónIniciada"
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
                 <Route path="/contrasena-actualizada" element={<MensajeContraseñaActualizada />} />
                 <Route path="/crear-nueva-contrasena" element={<CrearNuevaContraseña />} />
                 <Route path="/iniciar-sesion-para-continuar" element={<MensajeIniciarSesiónParaContinuar />} />
+                <Route path="/sesion-iniciada" element={<HeaderSesiónIniciada />} />
             </Routes>
         </Router>
     )

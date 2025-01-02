@@ -37,6 +37,8 @@
   background-color: transparent;
   white-space: nowrap;
   width: 15rem;
+  gap: 2rem;
+  margin-right: 5%;
 }
 .inicio-link{
   text-decoration: none;
@@ -60,7 +62,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2em;
+  gap: 2rem;
   margin-right: 7%;
 }
 .headerSesionIniciada-links button{

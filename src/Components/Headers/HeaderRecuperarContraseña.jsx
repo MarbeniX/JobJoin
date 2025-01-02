@@ -1,9 +1,10 @@
 import JobJoinLogo from "../../Images/JobJoin.png";
+import "../../Css/Headers&Footer.css";
 
 export default function HeaderRecuperarContraseña() {
     return(
-        <header>
+        <div className="inicio-header">
             <img src={JobJoinLogo} alt="JobJoinLogo" />
-        </header>
+        </div>
     )
 }

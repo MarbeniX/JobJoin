@@ -43,11 +43,10 @@
 .CuentaNueva-mensaje{
     display: flex;
     flex-direction: column;
-    gap: 5px;
 }
 .CuentaNueva-mensaje > h1{
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
 }
 .CuentaNueva-botones{
     display: flex;

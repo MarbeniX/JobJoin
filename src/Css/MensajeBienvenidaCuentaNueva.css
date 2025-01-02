@@ -73,6 +73,29 @@
     color: #023336;
     font-size: 17px;
 }
+.mensajeIniciarSesion-CuentaNueva-botones{
+    display: flex;
+    gap: 10px;
+    margin-left: 23%;
+}
+.button{
+    border: none;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    font-size: 17px;
+}
+.message_iniciarSesion{
+    background-color: #023336;
+    color: #EEF7F2;
+}
+.message_crearCuenta{
+    background-color: #F3FDFD;
+    color: #023336;
+}
+.message_salir{
+    background-color: transparent;
+    color: #05888F;
+}
 .CorreoUsuario{
     opacity: 0.3;
 }

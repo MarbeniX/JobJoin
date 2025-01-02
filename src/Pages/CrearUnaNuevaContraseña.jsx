@@ -1,10 +1,8 @@
-
+import Header from "../Components/HeaderRecuperarContraseña";
 import "../Css/RecuperarContrasena.css"
-import Header from "../Components/HeaderRecuperarContraseña"
 import formulario from "../Images/formulario.png";
 
-
-function RecuperarContrasena() {
+export default function CrearNuevaContraseña() {
     return (
         <div className="recuperar-contraseña-div">
             <Header/>
@@ -13,18 +11,18 @@ function RecuperarContrasena() {
                     <img src={formulario} alt="Ilustración"/>
                     <div className="card">
                         <div className="logo">JobJoin</div>
-                        <div className="title">Recupera tu cuenta</div>
+
+                        <div className="title">Crea una nueva contraseña</div>
                         <div className="description">
-                            Ingresa el correo electrónico asociado a tu cuenta. Te enviaremos un código de verificación
-                            para
-                            restablecer tu contraseña.
+                            Establece una contraseña segura para proteger tu cuenta.
                         </div>
                         <form>
                             <div className="form-group">
-                                <input type="email" placeholder="ejemplo@email.com" required/>
+                                <input type="email" placeholder="Ingresa tu contraseña" required/>
                             </div>
+
                             <div className="form-group">
-                                <button type="submit">Enviar código</button>
+                                <button type="submit">Actualizar contraseña</button>
                             </div>
                         </form>
                     </div>
@@ -33,5 +31,3 @@ function RecuperarContrasena() {
         </div>
     );
 }
-
-export default RecuperarContrasena;

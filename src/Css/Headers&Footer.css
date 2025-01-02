@@ -52,7 +52,7 @@
   background-color: #F7F8F8;
 }
 .header-sesion-iniciada > img{
-  width: 7rem;
+  width: 9rem;
   margin-left: 7%;
 }
 .headerSesionIniciada-links{
@@ -78,4 +78,28 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+/*Header busqueda sin login*/
+.headerBusquedaSinLogin{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-color: #F7F8F8;
+  height: 6%;
+}
+.headerBusquedaSinLogin > img{
+  width: 7rem;
+  margin-left: 7%;
+}
+.headerBusquedaSinLogin > div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  white-space: nowrap;
+  margin-right: 5%;
+  gap: 30px;
 }

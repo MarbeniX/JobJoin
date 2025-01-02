@@ -4,7 +4,7 @@ import VectorIcon from "../Images/VectorIcon.png";
 import FlechaIcon from "../Images/FlechaIcon.png";
 import Footer from "../Components/Footer.jsx";
 import PerfilTrabajadorViñeta from '../Components/PerfilTrabajadorViñeta.jsx';
-import Header from "../Components/Headers/HeaderBusquedaSinLogin.jsx"
+import Header from "../Components/Headers/HeaderSesiónIniciada.jsx"
 
 export default function BuscarSinRegistro() {
     return(

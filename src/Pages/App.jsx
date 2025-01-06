@@ -1,13 +1,17 @@
 import Inicio from "./Inicio"
-import Login from "./LogIn"
 import RecuperarContrasena from "./recuperarContrasena"  // Corregí la importación
 import RecuperarContrasenaStep1 from "./recuperarContrasenaStep1"  // Corregí la importación
-import MensajeBienvenidaCuentaNueva from "../Components/MensajeBienvenidaCuentaNueva"
+import MensajeBienvenidaCuentaNueva from "../Messages/MensajeBienvenidaCuentaNueva"
 import BuscarSinRegistro from "./BuscarSinRegisitro"
-import MensajeReenviarCodigo from "../Components/MensajeReenviarCodigo"
-import MensajeConfirmaciónReenvioCodigo from "../Components/MensajeConfirmaciónReenvioCodigo"
-import MensajeCodigoIncorrecto from "../Components/MensajeCodigoIncorrecto"
-import MensajeContraseñaActualizada from "../Components/MensajeContraseñaActualizada"
+import MensajeReenviarCodigo from "../Messages/MensajeReenviarCodigo"
+import MensajeConfirmaciónReenvioCodigo from "../Messages/MensajeConfirmaciónReenvioCodigo"
+import MensajeCodigoIncorrecto from "../Messages/MensajeCodigoIncorrecto"
+import MensajeContraseñaActualizada from "../Messages/MensajeContraseñaActualizada"
+import CrearNuevaContraseña from "./CrearUnaNuevaContraseña"
+import MensajeIniciarSesiónParaContinuar from "../Messages/MensajeIniciarSesiónParaContinuar"
+import HeaderSesiónIniciada from "../Components/Headers/HeaderSesiónIniciada"
+import BusquedaConLogin from "./BusquedaConRegistro.jsx"
+import PerfilHistorialSinHistorial from "./PerfilHistorialSinHistorial.jsx"
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -15,7 +19,6 @@ export default function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Inicio />} />
-                <Route path="/login" element={<Login />} />  {/* Añadí esta ruta para Login */}
                 <Route path="/recuperarContrasena" element={<RecuperarContrasena />} />
                 <Route path="/recuperarContrasenaStep1" element={<RecuperarContrasenaStep1 />} />
                 <Route path="/bienvenida-cuenta-nueva" element={<MensajeBienvenidaCuentaNueva />} />
@@ -24,6 +27,11 @@ export default function App() {
                 <Route path="/confirmacion-reenvio-codigo" element={<MensajeConfirmaciónReenvioCodigo />} />
                 <Route path="/codigo-incorrecto" element={<MensajeCodigoIncorrecto />} />
                 <Route path="/contrasena-actualizada" element={<MensajeContraseñaActualizada />} />
+                <Route path="/crear-nueva-contrasena" element={<CrearNuevaContraseña />} />
+                <Route path="/iniciar-sesion-para-continuar" element={<MensajeIniciarSesiónParaContinuar />} />
+                <Route path="/sesion-iniciada" element={<HeaderSesiónIniciada />} />
+                <Route path="/busqueda-con-registro" element={<BusquedaConLogin />} />
+                <Route path="/perfil-historial-sin-historial" element={<PerfilHistorialSinHistorial />} />
             </Routes>
         </Router>
     )

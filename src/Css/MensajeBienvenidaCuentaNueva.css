@@ -43,11 +43,10 @@
 .CuentaNueva-mensaje{
     display: flex;
     flex-direction: column;
-    gap: 5px;
 }
 .CuentaNueva-mensaje > h1{
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
 }
 .CuentaNueva-botones{
     display: flex;
@@ -72,6 +71,29 @@
     border: none;
     color: #023336;
     font-size: 17px;
+}
+.mensajeIniciarSesion-CuentaNueva-botones{
+    display: flex;
+    gap: 10px;
+    margin-left: 23%;
+}
+.button{
+    border: none;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    font-size: 17px;
+}
+.message_iniciarSesion{
+    background-color: #023336;
+    color: #EEF7F2;
+}
+.message_crearCuenta{
+    background-color: #F3FDFD;
+    color: #023336;
+}
+.message_salir{
+    background-color: transparent;
+    color: #05888F;
 }
 .CorreoUsuario{
     opacity: 0.3;

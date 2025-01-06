@@ -115,7 +115,10 @@
   font-weight: 400;
   color: #023336;
   letter-spacing: 1.5px;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
+
 .input-more-info h3 nav{
   display: inline;
   color: #05888F;

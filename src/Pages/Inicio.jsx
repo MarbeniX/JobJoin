@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Header from "../Components/Header.jsx";
+import Header from "../Components/Headers/Header.jsx";
 import Footer from "../Components/Footer.jsx";
 import PeopleWorking from '../Images/WorkingPeople.png';
 import GoogleLogo from "../Images/GoogleLogo.png";

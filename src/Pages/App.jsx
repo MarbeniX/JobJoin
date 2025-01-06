@@ -12,6 +12,7 @@ import MensajeIniciarSesiónParaContinuar from "../Messages/MensajeIniciarSesió
 import HeaderSesiónIniciada from "../Components/Headers/HeaderSesiónIniciada"
 import BusquedaConLogin from "./BusquedaConRegistro.jsx"
 import PerfilHistorialSinHistorial from "./PerfilHistorialSinHistorial.jsx"
+import RegistroDeServicios from "../Components/RegistroDeServicios.jsx"
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
                 <Route path="/sesion-iniciada" element={<HeaderSesiónIniciada />} />
                 <Route path="/busqueda-con-registro" element={<BusquedaConLogin />} />
                 <Route path="/perfil-historial-sin-historial" element={<PerfilHistorialSinHistorial />} />
+                <Route path="/registro-de-servicios" element={<RegistroDeServicios />} />
             </Routes>
         </Router>
     )

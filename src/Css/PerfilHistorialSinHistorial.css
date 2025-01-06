@@ -3,8 +3,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-
 }
 h1{
     color: #023336;
@@ -17,6 +15,7 @@ h1{
     justify-content: center;
     margin-left: 10%;
     margin-right: 10%;
+    padding-bottom: 2%;
 }
 .perfilHistorial-datos{
     display: flex;
@@ -81,12 +80,8 @@ h1{
     align-items:flex-start;
     gap: 1rem;
 }
-.perfilHistorial-historial-registro div{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.perfilHistorial-historial-registro button{
+
+.perfilHistorial-historial-registro-button{
     background-color: #4DA674;
     color: white;
     height: 44px;
@@ -95,4 +90,47 @@ h1{
     border-radius: 10px;
     font-weight: 400;
     font-size: 1.1rem;
+}
+.perfilHistorialSinHistorial-registros{
+    width: 60vw;
+}
+.perfilHistorialSinHistorial-titulosComponentes{
+    color: #023336;
+    font-weight: 600;
+    font-size:larger;
+}
+.perfilHistorialSinHistorial-registroDeServicios{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.perfilHistorialSinHistorial-configuración{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8%;
+    margin-left: 5%;
+    margin-right: 30%;
+    margin-bottom: 3%;
+}
+.perfilHistorialSinHistorial-configuración-left{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.perfilHistorialSinHistorial-configuración-div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.perfilHistorialSinHistorial-configuración-div-titulo{
+    color: #023336;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.perfilHistorialSinHistorial-configuración-div-text{
+    color: #7A8F8F;
+    font-size: 1.2rem;
 }

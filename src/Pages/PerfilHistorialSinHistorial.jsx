@@ -2,6 +2,7 @@ import Header from "../Components/Headers/HeaderSesiónIniciada"
 import Footer from "../Components/Footer"
 import FullProfilePicture from "../Images/FullProfilePicture.png"
 import RegistroDeServicios from "../Components/RegistroDeServicios"
+import { Link } from "react-router-dom";
 import "../Css/PerfilHistorialSinHIstorial.css"
 
 export default function PerfilHistorialSinHistorial(){
@@ -61,35 +62,35 @@ export default function PerfilHistorialSinHistorial(){
                         <div className="perfilHistorialSinHistorial-configuración-left">
                             <div className="perfilHistorialSinHistorial-configuración-div">
                                 <p className="perfilHistorialSinHistorial-configuración-div-titulo">Preferencia de notificaciones</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Notificaciones por correo</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Notificaciones por plataforma</p>
+                                <Link to="/" className="perfilHistorialSinHistorial-configuración-div-text">Notificaciones por correo</Link>
+                                <Link to="/" className="perfilHistorialSinHistorial-configuración-div-text">Notificaciones por plataforma</Link>
                             </div>
                             <div className="perfilHistorialSinHistorial-configuración-div">
                                 <p className="perfilHistorialSinHistorial-configuración-div-titulo">Privacidad y seguridad</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Administrar dispositivos</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Visibilidad de perfil</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Cambiar contraseña</p>
+                                <Link to = "/" className="perfilHistorialSinHistorial-configuración-div-text">Administrar dispositivos</Link>
+                                <Link to = "/" className="perfilHistorialSinHistorial-configuración-div-text">Visibilidad de perfil</Link>
+                                <Link to = "/" className="perfilHistorialSinHistorial-configuración-div-text">Cambiar contraseña</Link>
                             </div>
                             <div className="perfilHistorialSinHistorial-configuración-div">
                                 <p className="perfilHistorialSinHistorial-configuración-div-titulo">Historial y actividad</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Descargar historial</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Borrar historial</p>
+                                <Link to = "/" className="perfilHistorialSinHistorial-configuración-div-text">Descargar historial</Link>
+                                <Link to = "/" className="perfilHistorialSinHistorial-configuración-div-text">Borrar historial</Link>
                             </div>
                         </div>
                         <div className="perfilHistorialSinHistorial-configuración-left">
                             <div className="perfilHistorialSinHistorial-configuración-div">
                                 <p className="perfilHistorialSinHistorial-configuración-div-titulo">Idiomas y región</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Seleccionar idioma</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Configuración de ubicación</p>
+                                <Link to = "/" className="perfilHistorialSinHistorial-configuración-div-text">Seleccionar idioma</Link>
+                                <Link to = "/" className="perfilHistorialSinHistorial-configuración-div-text">Configuración de ubicación</Link>
                             </div>
                             <div className="perfilHistorialSinHistorial-configuración-div">
                                 <p className="perfilHistorialSinHistorial-configuración-div-titulo">Hisorial y actividad</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Contactar soporte</p>
+                                <Link to="/" className="perfilHistorialSinHistorial-configuración-div-text">Contactar soporte</Link>
                             </div>
                             <div className="perfilHistorialSinHistorial-configuración-div">
                                 <p className="perfilHistorialSinHistorial-configuración-div-titulo">Cuenta y sesión</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Eliminar Cuenta</p>
-                                <p className="perfilHistorialSinHistorial-configuración-div-text">Cerrar sesión</p>
+                                <Link to="/" className="perfilHistorialSinHistorial-configuración-div-text">Eliminar Cuenta</Link>
+                                <Link to="/" className="perfilHistorialSinHistorial-configuración-div-text">Cerrar sesión</Link>
                             </div>
                         </div>
                     </div>

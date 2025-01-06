@@ -10,6 +10,12 @@
 .inicio-signup-button{
   color: #3D845C;
 }
+.server-response {
+  color: #333;
+  font-size: 1em;
+  margin-top: 10px;
+  text-align: center;
+}
 .inicio-div{
   display: flex;
   flex-direction: column;

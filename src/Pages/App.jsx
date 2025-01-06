@@ -14,6 +14,7 @@ import BusquedaConLogin from "./BusquedaConRegistro.jsx"
 import PerfilHistorialSinHistorial from "./PerfilHistorialSinHistorial.jsx"
 import RegistroDeServicios from "../Components/RegistroDeServicios.jsx"
 import InicioPerfilDeTrabajador from "./InicioPerfilDeTrabajador.jsx"
+import CrearPerfilTrabajador from "./CrearPerfilTrabajador.jsx"
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
                 <Route path="/perfil-historial-sin-historial" element={<PerfilHistorialSinHistorial />} />
                 <Route path="/registro-de-servicios" element={<RegistroDeServicios />} />
                 <Route path="/inicio-perfil-trabajador" element={<InicioPerfilDeTrabajador />} />
+                <Route path="/crear-perfil-trabajador" element={<CrearPerfilTrabajador />} />
             </Routes>
         </Router>
     )

@@ -1,0 +1,27 @@
+.CrearPerfilTrabajador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+.CrearPerfilTrabajador > img{
+    width: 250px;
+}
+.CrearPerfilTrabajador-form{
+    display:flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    gap: 0.5rem;
+}
+.CrearPerfilTrabajador-p1{
+    color: #A9B7B7;
+    opacity: 0.5;
+    font-size: small;
+}
+.CrearPerfilTrabajador-titulo{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #023336;
+}

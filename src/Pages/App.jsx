@@ -15,6 +15,7 @@ import PerfilHistorialSinHistorial from "./PerfilHistorialSinHistorial.jsx"
 import RegistroDeServicios from "../Components/RegistroDeServicios.jsx"
 import InicioPerfilDeTrabajador from "./InicioPerfilDeTrabajador.jsx"
 import CrearPerfilTrabajador from "./CrearPerfilTrabajador.jsx"
+import MensajeConfirmarGuardarCambios from "../Messages/MensajeConfirmarGuardarCambios.jsx"
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
                 <Route path="/registro-de-servicios" element={<RegistroDeServicios />} />
                 <Route path="/inicio-perfil-trabajador" element={<InicioPerfilDeTrabajador />} />
                 <Route path="/crear-perfil-trabajador" element={<CrearPerfilTrabajador />} />
+                <Route path="/confirmar-guardar-cambios" element={<MensajeConfirmarGuardarCambios />} />
             </Routes>
         </Router>
     )

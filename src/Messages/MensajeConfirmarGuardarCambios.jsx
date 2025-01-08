@@ -1,17 +1,18 @@
 import '../Css/MensajeBienvenidaCuentaNueva.css';
-import IniciaSesiónParaContinuar from '../Images/IniciaSesiónParaContinuar.png';
-export default function MensajeReenviarCodigo() {
+import ErrorIcon from "../Images/IniciaSesiónParaContinuar.png";
+
+export default function MensajeConfirmarGuardadrCodigo() {
     return (
 <div className="CuentaNueva-div">
             <div className="CuentaNueva-inicio">
-                <img src={IniciaSesiónParaContinuar} alt="Infoicon" className='ErrorIcon'/>
+                <img src={ErrorIcon} alt="HappyGreenFace" className='ErrorIcon'/>
                 <div className="CuentaNueva-mensaje">
-                    <h1>¿Estas seguro de guardar los cambios?</h1>
-                    <p>Una vez guardados, los cambios serán aplicados de forma permanente</p>
+                    <h1>¿Seguro de guardar cambios?</h1>
+                    <p>Una vez guardados, los cambios serán aplicados de forma permanente.</p>
                 </div>
             </div>
             <div className="CuentaNueva-botones">
-                <button className="CN-B-salir">Cancelar</button>
+                <button className="CN-B-salir">Cancer</button>
                 <button className="CN-B-iniciar">Guardar cambios</button>
             </div>
         </div>

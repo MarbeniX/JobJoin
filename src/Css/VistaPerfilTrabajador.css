@@ -39,8 +39,8 @@
     justify-content: space-between;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 .VistaPerfilTrabajador__description > p{
     color: #4DA674;
@@ -56,15 +56,46 @@
 }
 .VistaPerfilTrabajador__about{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border: solid rgb(223, 222, 222);
+    flex-direction: row;
+    justify-content: space-between;
     margin-left: 10%;
     margin-right: 10%;
+    gap: 1rem;
+}
+.VistaPerfilTrabajador__about__text{
+    display: flex;
+    align-items: center;
     padding: 1rem;
+    border-radius: 1rem;
+    border-color: rgb(207, 207, 207);
+    border-style: solid;
+    width: 70%;
+}
+.VistaPerfilTrabajador__about__status{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border-color: rgb(207, 207, 207);
+    border-style: solid;
+    gap: 0.5rem;
+}
+.VistaPerfilTrabajador__about__status > p{
+    color: #023336;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.VistaPerfilTrabajador__about__status > button{
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    width: 60%;
 }
 .VistaPerfilTrabajador__reviews{
     display: flex;

@@ -4,6 +4,7 @@ import FullProfilePicture from "../Images/FullProfilePicture.png"
 import ElectricidadIcon from "../Images/ElectricidadIcon.png"
 import EmptyStars from "../Images/StarsEmpty.png"
 import AboutFrame from "../Images/About Frame.png"
+import DawnwardRow from "../Images/DownwardRow.png"
 import "../Css/VistaPerfilTrabajador.css"
 
 export default function VistaPerfilTrabajador() {
@@ -25,7 +26,13 @@ export default function VistaPerfilTrabajador() {
                 <button to="">Contactame</button>
             </div>
             <div className="VistaPerfilTrabajador__about">
-                <p>Experta en electricidad, con más de 5 años de experiencia en instalaciones residenciales y comerciales.</p>
+                <div className="VistaPerfilTrabajador__about__text">
+                    <p>Experta en electricidad, con más de 5 años de experiencia en instalaciones residenciales y comerciales. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nobis explicabo laudantium fugit. Aperiam itaque fugiat veniam harum sint ipsam, sit minima dolor quaerat accusantium hic quo ex! Esse, voluptas.</p>
+                </div>
+                <div className="VistaPerfilTrabajador__about__status">
+                    <p>Estado</p>
+                    <button>Cambiar estado <img src={DawnwardRow} alt="" /></button>
+                </div>
             </div>
             <div className="VistaPerfilTrabajador__reviews">
                 <img src={AboutFrame} alt="Abourframe" />

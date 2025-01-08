@@ -120,3 +120,55 @@
 .VistaPerfilTrabajador_lastp{
     margin-top: 5rem;
 }
+/*Perfil trabajador comentarios*/
+.VistaPerfilTrabajador__about__status__button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3rem;
+    background-color: #C2E7BC;
+    width: 136px;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+.VistaPerfilTrabajador__about__status__button > p{
+    color: #1B3C16;
+    font-size: 1.2rem;
+}
+.VistaPerfilTrabajador__reviews__stars__rating{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+}
+.VistaPerfilTrabajador__reviews__more{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.VistaPerfilTrabajador__reviews__more > h2{
+    color: #023336;
+}
+.VistaPerfilTrabajador__reviews__more__profiles{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.VistaPerfilTrabajador__reviews__more__buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+.VistaPerfilTrabajador__reviews__more__buttons > button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+}

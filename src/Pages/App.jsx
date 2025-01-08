@@ -18,6 +18,8 @@ import CrearPerfilTrabajador from "./CrearPerfilTrabajador.jsx"
 import MensajeConfirmarGuardarCambios from "../Messages/MensajeConfirmarGuardarCambios.jsx"
 import VistaPerfilTrabajador from "./VistaPerfilTrabajador.jsx"
 import MensajeEstasSeguroDeSalir from "../Messages/MensajeEstasSeguroDeSalir.jsx"
+import PerfilTrabajadorComentarios from "./PerfilTrabajadorComentarios.jsx"
+import ComentariosPerfilTrabajadorComentarios from "../Components/ComentariosPerfilTrabajadorComentarios.jsx"
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -44,6 +46,8 @@ export default function App() {
                 <Route path="/confirmar-guardar-cambios" element={<MensajeConfirmarGuardarCambios />} />
                 <Route path="/vista-perfil-trabajador" element={<VistaPerfilTrabajador />} />
                 <Route path="/estas-seguro-de-salir" element={<MensajeEstasSeguroDeSalir />} />
+                <Route path="/perfil-trabajador-comentarios" element={<PerfilTrabajadorComentarios />} />
+                <Route path="/comentarios-perfil-trabajador" element={<ComentariosPerfilTrabajadorComentarios />} />
             </Routes>
         </Router>
     )

@@ -1,15 +1,15 @@
 import '../Css/PerfilTrabajadorViñeta.css';
 import PerfilTrabajador from "../Images/PerfilTrabajador.png";
-import UbicaciónIcon from "../Images/UbicaciónIcon.png";
-import Stars from "../Images/Stars.png";
 import InfoIcon from "../Images/InfoIcon.png";
-import CategoriaIcon from "../Images/CategoriaIcon.png";
+import PlomeriaIcon from "../Images/PlomeriaIcon.png";
+import PalomitaIcon from "../Images/PalomitaIcon.png";
+import StarsHalf from "../Images/StarsHalf.png";
 
 export default function PerfilTrabajadorViñeta() {
     return(
         <div className='MainDiv'>
             <div className='Costo'>
-                <nav> <img src={CategoriaIcon} alt="CategoriaIcon" />Plomería</nav>
+                <nav> <img src={PlomeriaIcon} alt="PlomeriaIcon" />Plomería</nav>
                 <div>
                     <p className='p1'>Desde</p>
                     <p>$250</p>
@@ -20,25 +20,20 @@ export default function PerfilTrabajadorViñeta() {
                 <div className='PerfilInfo'>
                     <p>Berlin Pérez</p>
                     <div className='PerfilUbicación'>
-                        <img src={UbicaciónIcon} alt="UbicaciónIcon" />
-                        <p>Cuauhtémoc, CDMX</p>
-                        <img src={Stars} alt="StarsRating" />
+                        <img src={PalomitaIcon} alt="PalomitaIcon" />
+                        <p>Disponible</p>
                     </div>
                 </div>
             </div>
             <div className='Disponibilidad'>
                 <div className='DiasSemana'>
-                    <p className='DispobilidadP1'>Disponibilidad</p>
-                    <p className='DiasSemanaInfo'>Lunes</p>
+                    <p className='DispobilidadP1'>Ubicación</p>
+                    <p>Ubicación, mx.</p>
                 </div>
                 <div className='Horario'>
-                    <p className='DispobilidadP1'>Horario</p>
-                    <p className='HorarioInfo'>9:00 AM - 5:00 PM</p>
+                    <p className='DispobilidadP1'>Calificación</p>
+                    <img src={StarsHalf} alt="StarsHalf" />
                 </div>
-            </div>
-            <div className='ViñetaText'>
-                <img src={InfoIcon} alt="InfoIcon" />
-                <p>Más días y horarios diponibles en el perfil</p>
             </div>
             <div className='ContactoBotones'>
                 <button className='ContactoPerfil'>Ver perfil</button>

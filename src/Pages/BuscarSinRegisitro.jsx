@@ -31,6 +31,8 @@ export default function BuscarSinRegistro() {
             </div>
             <div className='Perfiles'>
                 <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
+                <PerfilTrabajadorViñeta />
             </div>
             <div className='MostrarMasPefiles'>
                 <button>Mostrar más perfiles</button>

@@ -113,9 +113,11 @@ db.serialize(() => {
 
     console.log("Tablas creadas correctamente (si no existían).");
 });
-
+// Middleware para procesar JSON
+app.use(express.json());
 // Endpoint para registrar un usuario
 app.post("/register", (req, res) => {
+    console.log(req.body);
     const { nombre, correo, contraseña, tipoUsuario } = req.body;
 
     const query = `

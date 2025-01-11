@@ -1,12 +1,21 @@
-# React + Vite
+PARA EJECUTAR EL PROYECTO:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Al instalar el proyecto se tiene que usar el comando:
+- npm install
 
-Currently, two official plugins are available:
+Seguido de estas la instalación gloabl de:
+- npm install concurrently --save-dev
+- npm install nodemon --save-dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Los comandos de ejecución son:
+Inicio del cliente ("frontend"):
+- npm run dev
+Inicio del servidor ("backend"):
+- npm run dev:server
+Inicio simultáneo:
+- npm run dev:all
 
+--- 
 
 Se tiene que agregar las dependecias
 -  npm install axios 
@@ -16,3 +25,4 @@ se tiene que crear la base local con "sqlite3 jobjoin.db" localmente y salir, lo
 "Tablas creadas correctamente (si no existían)."
 "Servidor corriendo en http://localhost:5000"
 "Conexión exitosa a SQLite"
+

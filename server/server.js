@@ -1,17 +1,9 @@
-import sqlite3 from "sqlite3";
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 
-// Configuración de SQLite
-const sqlite = sqlite3.verbose();
-const db = new sqlite.Database("./jobjoin.db", (err) => {
-    if (err) {
-        console.error("Error al conectar con SQLite:", err.message);
-    } else {
-        console.log("Conexión exitosa a SQLite");
-    }
-});
+import db from "./db/connection.js"
+import userActions from "./api/useractions.js"
 
 // Configuración de Express
 const app = express();
@@ -115,44 +107,8 @@ db.serialize(() => {
 });
 // Middleware para procesar JSON
 app.use(express.json());
-// Endpoint para registrar un usuario
-app.post("/register", (req, res) => {
-    console.log(req.body);
-    const { nombre, correo, contraseña, tipoUsuario } = req.body;
-
-    const query = `
-        INSERT INTO Usuario (nombre, correo, contraseña, tipoUsuario)
-        VALUES (?, ?, ?, ?)
-    `;
-
-    db.run(query, [nombre, correo, contraseña, tipoUsuario], (err) => {
-        if (err) {
-            res.status(400).send({ success: false, message: "Error al registrar usuario", error: err.message });
-        } else {
-            res.status(201).send({ success: true, message: "Usuario registrado con éxito" });
-        }
-    });
-});
-
-// Endpoint para login
-app.post("/login", (req, res) => {
-    const { correo, contraseña } = req.body;
-
-    const query = `
-        SELECT * FROM Usuario WHERE correo = ? AND contraseña = ?
-    `;
-
-    db.get(query, [correo, contraseña], (err, row) => {
-        if (err) {
-            res.status(500).send({ success: false, message: "Error interno del servidor" });
-        } else if (row) {
-            res.status(200).send({ success: true, message: "Inicio de sesión exitoso", user: row });
-        } else {
-            res.status(401).send({ success: false, message: "Credenciales incorrectas" });
-        }
-    });
-});
-
+// Endpoint para las acciones del usuario
+app.use('/users', userActions);
 // Iniciar servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);

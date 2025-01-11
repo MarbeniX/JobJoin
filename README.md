@@ -8,11 +8,17 @@ Seguido de estas la instalación gloabl de:
 - npm install nodemon --save-dev
 
 Los comandos de ejecución son:
+
 Inicio del cliente ("frontend"):
+
 - npm run dev
+
 Inicio del servidor ("backend"):
+
 - npm run dev:server
+
 Inicio simultáneo:
+
 - npm run dev:all
 
 --- 

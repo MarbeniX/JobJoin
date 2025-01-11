@@ -50,19 +50,21 @@ export default function Inicio() {
         if (validate()) {
             try {
                 // Realizar consulta al backend
-                const response = await axios.post("http://localhost:5000/login", {
+                const response = await axios.post("http://localhost:5000/register", {
+                    nombre: `${formData.nombre} ${formData.apellido}`,
                     correo: formData.email,
                     contraseña: formData.contraseña,
+                    tipoUsuario: "Empleador", // Puedes cambiar este valor según sea necesario
                 });
 
                 // Procesar respuesta del servidor
                 if (response.data.success) {
-                    setServerResponse(`Inicio de sesión exitoso. Bienvenido, ${response.data.user.nombre}`);
+                    setServerResponse(`Registro exitoso. Bienvenido, ${formData.nombre}`);
                 } else {
-                    setServerResponse("Credenciales incorrectas.");
+                    setServerResponse("Error al registrar usuario.");
                 }
             } catch (error) {
-                setServerResponse("Datos incorrectos.");
+                setServerResponse("Error al registrar usuario.");
                 console.error("Error:", error);
             }
         } else {

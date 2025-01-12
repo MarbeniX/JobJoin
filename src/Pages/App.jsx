@@ -23,7 +23,11 @@ import ComentariosPerfilTrabajadorComentarios from "../Components/ComentariosPer
 import PerfilTrabajadorViñeta from "../Components/PerfilTrabajadorViñeta.jsx"
 import ContactarForms from "../pop-up forms/ContactarForm.jsx"
 import Login from "./Login.jsx"
+import ConectarTrabajadorPopup from "../pop-up forms/ConectarTrabajadorPopup.jsx"
+import MensajeSolicitudEnviada from "../Messages/MensajeSolicitudEnviada.jsx"
+import SolicitudesDeTrabajo from "./SolicitudesDeTrabajo.jsx"
 import ContactarFormMensaje from "../pop-up forms/ContactarForm.jsx"
+import SolicitudDeTrabajo from "../Components/SolicitudesDeTrabajo.jsx"
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -56,6 +60,10 @@ export default function App() {
                 <Route path="/contactar-form" element={<ContactarForms />} />
                 <Route path="/contactar-form-mensaje" element={<ContactarFormMensaje />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/conectar-trabajador" element={<ConectarTrabajadorPopup />} />
+                <Route path="/solicitud-enviada" element={<MensajeSolicitudEnviada />} />
+                <Route path="/solicitudes-de-trabajo" element={<SolicitudesDeTrabajo />} />
+                <Route path="/solicitud-de-trabajo" element={<SolicitudDeTrabajo />} />
             </Routes>
         </Router>
     )

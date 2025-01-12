@@ -98,3 +98,9 @@
 .CorreoUsuario{
     opacity: 0.3;
 }
+/*Mensaje solicitud enviada*/
+.MensajeSolicitudEnviada-p{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #158F05;
+}

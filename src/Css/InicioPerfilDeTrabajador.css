@@ -17,3 +17,19 @@
     margin-top: 2rem;
     margin-bottom: 7rem;
 }
+
+/*Solicitudes de trabajo*/
+.InicioPerfilDeTrabajador-Texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    gap: 1rem;
+}
+.InicioPerfilDeTrabajador-h1{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #023336;
+}

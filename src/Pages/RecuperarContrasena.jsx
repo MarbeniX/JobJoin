@@ -1,9 +1,27 @@
 import "../Css/RecuperarContrasena.css"
 import Header from "../Components/Headers/HeaderRecuperarContraseña"
+import React, { useState } from "react";
 import formulario from "../Images/formulario.png";
+import axios from "axios";
 
 
 function RecuperarContrasena() {
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post("http://localhost:5000/users/recuperarContrasena", {
+               correo: email,
+            });
+            setMessage(response.data.message);
+        } catch (error) {
+            setMessage(error.response.data.message);
+        }
+    }
+    
+
     return (
         <div className="recuperar-contraseña-div">
             <Header/>
@@ -18,14 +36,20 @@ function RecuperarContrasena() {
                             para
                             restablecer tu contraseña.
                         </div>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="form-group">
-                                <input type="email" placeholder="ejemplo@email.com" required/>
+                                <input type="email" 
+                                        placeholder="ejemplo@email.com" 
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                    />
                             </div>
                             <div className="form-group">
                                 <button type="submit">Enviar código</button>
                             </div>
                         </form>
+                        {message && <p>{message}</p>}
                     </div>
                 </div>
             </main>

@@ -7,7 +7,6 @@
     margin-top: 3rem;
     gap: 1.5rem;
     text-align: center;
-    height: 77vh;
 }
 .login-container-p1{
     font-size: 3rem;
@@ -23,6 +22,10 @@
     border: 1px solid #4DA674;
     padding: 1rem;
     border-radius: 1rem;
+    gap: 16px;
+}
+.login-container-google-button span{
+    flex: 1 0 0;
 }
 .login-inicio-frame{
     width: 30rem;

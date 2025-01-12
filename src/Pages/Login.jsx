@@ -73,7 +73,7 @@ export default function Login() {
                 </p>
                 <button type="button" className="login-container-google-button">
                     <img src={GoogleLogo} alt="GoogleLogo" />
-                    Continuar con Google
+                    <span>Continuar con Google</span>
                 </button>
                 <img src={InicioFrame} alt="InicioFrame" className="login-inicio-frame" />
                 <form className="login-form" onSubmit={handleSubmit}>

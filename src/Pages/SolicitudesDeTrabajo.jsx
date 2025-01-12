@@ -1,7 +1,7 @@
 import Header from "../Components/Headers/HeaderSesiónIniciada"
 import Footer from "../Components/Footer"
 import SolicitudDeTrabajo from "../Components/SolicitudesDeTrabajo"
-import PerfilTrabajadorIcon from "../Images/InicioPerfilTrabajador.png"
+import SolicitudTrabajo from "../Images/SolicitudTrabajo.png"
 import "../Css/InicioPerfilDeTrabajador.css"
 
 export default function SolicitudesDeTrabajo(){
@@ -15,12 +15,8 @@ export default function SolicitudesDeTrabajo(){
                 </div>
                 <p>Aún no tienes solicitudes de trabajo. Mantén tu perfil actualizado para aumentar tus posibilidades de ser contactado</p>
                 <button>Actualizar mi perfil</button>
-                <img src={PerfilTrabajadorIcon} alt="PerfilInicioTrabajador Icon" />
+                <img src={SolicitudTrabajo} alt="PerfilInicioTrabajador Icon" />
                 <div>
-                    <SolicitudDeTrabajo/>
-                    <SolicitudDeTrabajo/>
-                    <SolicitudDeTrabajo/>
-                    <SolicitudDeTrabajo/>
                 </div>
             </div>
             <Footer/>

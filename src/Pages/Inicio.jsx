@@ -65,7 +65,7 @@ export default function Inicio() {
 
                 if (response.data.success) {
                     setServerResponse("Registro exitoso. Redirigiendo al inicio...");
-                    setTimeout(() => navigate("/busqueda-con-registro"), 2000);
+                    setTimeout(() => navigate("/bienvenida-cuenta-nueva"), 1000);
                 } else {
                     setServerResponse(response.data.message || "Error al registrar usuario.");
                 }
@@ -145,7 +145,7 @@ export default function Inicio() {
                         </div>
                     </div>
                     <div className="input-more-info">
-                        <h3>¿Ya tienes cuenta? Da click <nav onClick={() => navigate("/inicio-perfil-trabajador")}>aquí</nav></h3>
+                        <h3>¿Ya tienes cuenta? Da click <nav onClick={() => navigate("/login")}>aquí</nav></h3>
                         <p>
                             Al registrarte, aceptas nuestro Aviso de privacidad y consientes el tratamiento de tus datos según lo establecido con nuestros Términos y condiciones.
                         </p>

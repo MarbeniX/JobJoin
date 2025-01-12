@@ -50,7 +50,7 @@ export default function Inicio() {
         if (validate()) {
             try {
                 // Realizar consulta al backend
-                const response = await axios.post("http://localhost:5000/register", {
+                const response = await axios.post("http://localhost:5000/users/register", {
                     nombre: `${formData.nombre} ${formData.apellido}`,
                     correo: formData.email,
                     contraseña: formData.contraseña,

@@ -22,6 +22,7 @@ import PerfilTrabajadorComentarios from "./PerfilTrabajadorComentarios.jsx"
 import ComentariosPerfilTrabajadorComentarios from "../Components/ComentariosPerfilTrabajadorComentarios.jsx"
 import PerfilTrabajadorViñeta from "../Components/PerfilTrabajadorViñeta.jsx"
 import ContactarForms from "../pop-up forms/ContactarForm.jsx"
+import ContactarFormMensaje from "../pop-up forms/ContactarForm.jsx"
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 
 export default function App() {
@@ -52,6 +53,7 @@ export default function App() {
                 <Route path="/comentarios-perfil-trabajador" element={<ComentariosPerfilTrabajadorComentarios />} />
                 <Route path="/perfil-trabajador-viñeta" element={<PerfilTrabajadorViñeta />} />
                 <Route path="/contactar-form" element={<ContactarForms />} />
+                <Route path="/contactar-form-mensaje" element={<ContactarFormMensaje />} />
             </Routes>
         </Router>
     )

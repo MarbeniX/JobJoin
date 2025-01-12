@@ -93,7 +93,7 @@ export default function Inicio() {
                 <form className="inicio-inputs" onSubmit={handleSubmit}>
                     <button type="button" className="inicio-button-google">
                         <img src={GoogleLogo} alt="GoogleLogo" />
-                        Continuar con Google
+                        <span>Continuar con Google</span>
                     </button>
                     <img src={InicioFrame} alt="InicioFrame" className="inicio-frame" />
                     <div className="input-data">

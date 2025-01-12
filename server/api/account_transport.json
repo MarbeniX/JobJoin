@@ -1,0 +1,10 @@
+{
+    "service": "gmail",
+    "auth": {
+      "type": "OAuth2",
+      "user": "jobjoin.help@gmail.com",
+      "clientId": "1018532204441-84gt7ffocp54r3lec8kellu9lqerih6u.apps.googleusercontent.com",
+      "clientSecret": "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",
+      "refreshToken": "1//04voopkgr4i-XCgYIARAAGAQSNwF-L9IrOteASccZ4ynwCqqpE6Lleki18Yegr3B_mHW-Ha-77gkcPduhcFRwzZzkrO96kQdbmaE"
+    }
+  }

@@ -7,7 +7,7 @@ export default function Header() {
         <header className="inicio-header">
             <img src={JobJoinLogo} alt="JobJoin logo"/>
             <div className="header-links">
-                <Link to="/Buscar" className="inicio-login-button inicio-link">Buscar</Link>
+                <Link to="/buscar-sin-registro" className="inicio-login-button inicio-link">Buscar</Link>
             </div>
         </header> 
     )

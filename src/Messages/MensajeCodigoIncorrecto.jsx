@@ -1,19 +1,19 @@
 import '../Css/MensajeBienvenidaCuentaNueva.css';
-import CandadoIcon from "../Images/CandadoIcon.png";
+import ErrorIcon from "../Images/ErrorIcon.png";
 
 export default function MensajeReenviarCodigo() {
     return (
 <div className="CuentaNueva-div">
             <div className="CuentaNueva-inicio">
-                <img src={CandadoIcon} alt="HappyGreenFace" className='CandadoIcon'/>
+                <img src={ErrorIcon} alt="HappyGreenFace" className='ErrorIcon'/>
                 <div className="CuentaNueva-mensaje">
-                    <h1>Contraseña actualizada</h1>
-                    <p>Hemos actualizado su contraseña</p>
+                    <h1>Código incorrecto</h1>
+                    <p>El código ingresado no es válido. Por favor, verifica e intenta nuevamente.</p>
                 </div>
             </div>
             <div className="CuentaNueva-botones">
                 <button className="CN-B-salir">Salir</button>
-                <button className="CN-B-iniciar">Inisiar sesión</button>
+                <button className="CN-B-iniciar">Reintentar</button>
             </div>
         </div>
     )

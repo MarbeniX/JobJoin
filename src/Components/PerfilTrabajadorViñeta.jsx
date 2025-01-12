@@ -1,3 +1,5 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import '../Css/PerfilTrabajadorViñeta.css';
 import PerfilTrabajador from "../Images/PerfilTrabajador.png";
 import InfoIcon from "../Images/InfoIcon.png";
@@ -6,17 +8,19 @@ import PalomitaIcon from "../Images/PalomitaIcon.png";
 import StarsHalf from "../Images/StarsHalf.png";
 
 export default function PerfilTrabajadorViñeta() {
-    return(
+    const navigate = useNavigate();
+
+    return (
         <div className='MainDiv'>
             <div className='Costo'>
-                <nav> <img src={PlomeriaIcon} alt="PlomeriaIcon" />Plomería</nav>
+                <nav><img src={PlomeriaIcon} alt="PlomeriaIcon" />Plomería</nav>
                 <div>
                     <p className='p1'>Desde</p>
                     <p>$250</p>
                 </div>
             </div>
             <div className='Perfil'>
-                <img src={PerfilTrabajador} alt="PerfilTrabajador"/>
+                <img src={PerfilTrabajador} alt="PerfilTrabajador" />
                 <div className='PerfilInfo'>
                     <p>Berlin Pérez</p>
                     <div className='PerfilUbicación'>
@@ -36,9 +40,14 @@ export default function PerfilTrabajadorViñeta() {
                 </div>
             </div>
             <div className='ContactoBotones'>
-                <button className='ContactoPerfil'>Ver perfil</button>
+                <button
+                    className='ContactoPerfil'
+                    onClick={() => navigate("/vista-perfil-trabajador")}
+                >
+                    Ver perfil
+                </button>
                 <button className='ContactoContactar'>Contactar</button>
             </div>
         </div>
-    )
+    );
 }

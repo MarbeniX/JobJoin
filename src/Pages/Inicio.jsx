@@ -10,15 +10,22 @@ import EtiquetaDescubrir from "../Images/EtiquetaDescubrir.png";
 import EtiquetaLocalizar from "../Images/localizar.png";
 import EtiquetaMonitorear from "../Images/EtiquetaMonitorear.png";
 import AboutFrame from "../Images/About Frame.png";
+import MensajeBienvenidaCuentaNueva from "../Messages/MensajeBienvenidaCuentaNueva.jsx";
+import { Link } from "react-router-dom";
 import "../Css/index.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Inicio() {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         nombre: "",
         apellido: "",
         email: "",
         contraseña: "",
     });
+
+    const [mostrarBienvenida, setMostrarBienvenida] = useState(false);
 
     const [errors, setErrors] = useState({});
     const [serverResponse, setServerResponse] = useState("");
@@ -49,27 +56,25 @@ export default function Inicio() {
         e.preventDefault();
         if (validate()) {
             try {
-                // Realizar consulta al backend
                 const response = await axios.post("http://localhost:5000/users/register", {
                     nombre: `${formData.nombre} ${formData.apellido}`,
                     correo: formData.email,
                     contraseña: formData.contraseña,
-                    tipoUsuario: "Empleador", // Puedes cambiar este valor según sea necesario
-                },{
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
+                    tipoUsuario: "Empleador",
                 });
 
-                // Procesar respuesta del servidor
                 if (response.data.success) {
-                    setServerResponse(`Registro exitoso. Bienvenido, ${formData.nombre}`);
+                    setServerResponse("Registro exitoso. Redirigiendo al inicio...");
+                    setTimeout(() => navigate("/bienvenida-cuenta-nueva"), 1000);
                 } else {
-                    setServerResponse("Error al registrar usuario.");
+                    setServerResponse(response.data.message || "Error al registrar usuario.");
                 }
             } catch (error) {
-                setServerResponse("Error al registrar usuario.");
-                console.error("Error:", error);
+                if (error.response && error.response.data && error.response.data.message) {
+                    setServerResponse(error.response.data.message);
+                } else {
+                    setServerResponse("Error al registrar usuario. Verifica los datos e inténtalo nuevamente.");
+                }
             }
         } else {
             setServerResponse("Por favor, completa todos los campos correctamente.");
@@ -140,7 +145,7 @@ export default function Inicio() {
                         </div>
                     </div>
                     <div className="input-more-info">
-                        <h3>¿Ya tienes cuenta? Da click <nav>aquí</nav></h3>
+                        <h3>¿Ya tienes cuenta? Da click <nav onClick={() => navigate("/login")}>aquí</nav></h3>
                         <p>
                             Al registrarte, aceptas nuestro Aviso de privacidad y consientes el tratamiento de tus datos según lo establecido con nuestros Términos y condiciones.
                         </p>

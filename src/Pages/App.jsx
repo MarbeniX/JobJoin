@@ -28,49 +28,52 @@ import MensajeSolicitudEnviada from "../Messages/MensajeSolicitudEnviada.jsx"
 import SolicitudesDeTrabajo from "./SolicitudesDeTrabajo.jsx"
 import ContactarFormMensaje from "../pop-up forms/ContactarForm.jsx"
 import SolicitudDeTrabajo from "../Components/SolicitudesDeTrabajo.jsx"
-import SinTrabajoActivo from "./SinTrabajoActivo.jsx"
-import CancelarServicioForm from "../pop-up forms/CancelarServicioForm.jsx"
-import MensajeServicioCancelado from "../Messages/MensajeServicioCancelado.jsx"
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom'
+import { useUserContext, UserProvider } from "../UserProvider/UserProvider.jsx"
 
 export default function App() {
+    // Proteger rutas privadas
+    const PrivateRoute = ({ children }) => {
+        const { user } = useUserContext();
+        return user ? children : <Navigate to="/iniciar-sesion-para-continuar" />;
+    };
+
     return (
         <Router>
+            <UserProvider>
             <Routes>
                 <Route path="/" element={<Inicio />} />
-                <Route path="/recuperarContrasena" element={<RecuperarContrasena />} />
-                <Route path="/recuperarContrasenaStep1" element={<RecuperarContrasenaStep1 />} />
-                <Route path="/bienvenida-cuenta-nueva" element={<MensajeBienvenidaCuentaNueva />} />
-                <Route path="/buscar-sin-registro" element={<BuscarSinRegistro />} />
-                <Route path="/reenviar-codigo" element={<MensajeReenviarCodigo />} />
-                <Route path="/confirmacion-reenvio-codigo" element={<MensajeConfirmaciónReenvioCodigo />} />
-                <Route path="/codigo-incorrecto" element={<MensajeCodigoIncorrecto />} />
-                <Route path="/contrasena-actualizada" element={<MensajeContraseñaActualizada />} />
-                <Route path="/crear-nueva-contrasena" element={<CrearNuevaContraseña />} />
-                <Route path="/iniciar-sesion-para-continuar" element={<MensajeIniciarSesiónParaContinuar />} />
-                <Route path="/sesion-iniciada" element={<HeaderSesiónIniciada />} />
-                <Route path="/busqueda-con-registro" element={<BusquedaConLogin />} />
-                <Route path="/perfil-historial-sin-historial" element={<PerfilHistorialSinHistorial />} />
-                <Route path="/registro-de-servicios" element={<RegistroDeServicios />} />
-                <Route path="/inicio-perfil-trabajador" element={<InicioPerfilDeTrabajador />} />
-                <Route path="/crear-perfil-trabajador" element={<CrearPerfilTrabajador />} />
-                <Route path="/confirmar-guardar-cambios" element={<MensajeConfirmarGuardarCambios />} />
-                <Route path="/vista-perfil-trabajador" element={<VistaPerfilTrabajador />} />
-                <Route path="/estas-seguro-de-salir" element={<MensajeEstasSeguroDeSalir />} />
-                <Route path="/perfil-trabajador-comentarios" element={<PerfilTrabajadorComentarios />} />
-                <Route path="/comentarios-perfil-trabajador" element={<ComentariosPerfilTrabajadorComentarios />} />
-                <Route path="/perfil-trabajador-viñeta" element={<PerfilTrabajadorViñeta />} />
-                <Route path="/contactar-form" element={<ContactarForms />} />
-                <Route path="/contactar-form-mensaje" element={<ContactarFormMensaje />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/conectar-trabajador" element={<ConectarTrabajadorPopup />} />
-                <Route path="/solicitud-enviada" element={<MensajeSolicitudEnviada />} />
-                <Route path="/solicitudes-de-trabajo" element={<SolicitudesDeTrabajo />} />
-                <Route path="/solicitud-de-trabajo" element={<SolicitudDeTrabajo />} />
-                <Route path="/sin-trabajo-activo" element={<SinTrabajoActivo />} />
-                <Route path="/cancelar-servicio" element={<CancelarServicioForm />} />
-                <Route path="/servicio-cancelado" element={<MensajeServicioCancelado />} />
+                    <Route path="/contrasena-actualizada" element={<MensajeContraseñaActualizada />} />
+                    <Route path="/crear-nueva-contrasena" element={<CrearNuevaContraseña />} />
+                    <Route path="/iniciar-sesion-para-continuar" element={<MensajeIniciarSesiónParaContinuar />} />
+                    <Route path="/sesion-iniciada" element={<PrivateRoute> <HeaderSesiónIniciada /> </PrivateRoute> } />
+                    <Route path="/perfil-historial-sin-historial" element={<PrivateRoute><PerfilHistorialSinHistorial /></PrivateRoute>} />
+                    <Route path="/registro-de-servicios" element={<RegistroDeServicios />} />
+                    <Route path="/busqueda-con-registro" element={<PrivateRoute><BusquedaConLogin /></PrivateRoute>} />
+                    <Route path="/inicio-perfil-trabajador" element={<InicioPerfilDeTrabajador />} />
+                    <Route path="/crear-perfil-trabajador" element={<CrearPerfilTrabajador />} />
+                    <Route path="/confirmar-guardar-cambios" element={<MensajeConfirmarGuardarCambios />} />
+                    <Route path="/vista-perfil-trabajador" element={<VistaPerfilTrabajador />} />
+                    <Route path="/estas-seguro-de-salir" element={<MensajeEstasSeguroDeSalir />} />
+                    <Route path="/perfil-trabajador-comentarios" element={<PerfilTrabajadorComentarios />} />
+                    <Route path="/comentarios-perfil-trabajador" element={<ComentariosPerfilTrabajadorComentarios />} />
+                    <Route path="/perfil-trabajador-viñeta" element={<PerfilTrabajadorViñeta />} />
+                    <Route path="/contactar-form" element={<ContactarForms />} />
+                    <Route path="/contactar-form-mensaje" element={<ContactarFormMensaje />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/conectar-trabajador" element={<ConectarTrabajadorPopup />} />
+                    <Route path="/solicitud-enviada" element={<MensajeSolicitudEnviada />} />
+                    <Route path="/solicitudes-de-trabajo" element={<SolicitudesDeTrabajo />} />
+                    <Route path="/solicitud-de-trabajo" element={<SolicitudDeTrabajo />} />
+                    <Route path="/recuperarContrasena" element={<RecuperarContrasena />} />
+                    <Route path="/recuperarContrasenaStep1" element={<RecuperarContrasenaStep1 />} />
+                    <Route path="/bienvenida-cuenta-nueva" element={<MensajeBienvenidaCuentaNueva />} />
+                    <Route path="/buscar-sin-registro" element={<BuscarSinRegistro />} />
+                    <Route path="/reenviar-codigo" element={<MensajeReenviarCodigo />} />
+                    <Route path="/confirmacion-reenvio-codigo" element={<MensajeConfirmaciónReenvioCodigo />} />
+                    <Route path="/codigo-incorrecto" element={<MensajeCodigoIncorrecto />} />
             </Routes>
+        </UserProvider>
         </Router>
     )
 }

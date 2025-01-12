@@ -8,7 +8,7 @@ export default function Header() {
             <img src={JobJoinLogo} alt="JobJoin logo"/>
             <div className="header-links">
                 <Link to="/Buscar" className="inicio-login-button inicio-link">Buscar</Link>
-                <Link to="/IniciarSesion" className="inicio-signup-button inicio-link">Iniciar sesión</Link>
+                <Link to="/login" className="inicio-signup-button inicio-link">Iniciar sesión</Link>
             </div>
         </header> 
     )

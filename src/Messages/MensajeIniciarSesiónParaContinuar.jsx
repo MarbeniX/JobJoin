@@ -1,7 +1,19 @@
 import '../Css/MensajeBienvenidaCuentaNueva.css';
+import { useNavigate } from 'react-router-dom';
 import IniciarSesiónIcon from '../Images/IniciaSesiónParaContinuar.png';
 
 export default function MensajeReenviarCodigo() {
+
+    const navigate = useNavigate();
+    
+    const handleLoginClick = () => {
+        navigate('/login');
+    };
+
+    const handleSignupClick = () => {
+        navigate('/');
+    };
+
     return (
 <div className="CuentaNueva-div">
             <div className="CuentaNueva-inicio">
@@ -13,8 +25,8 @@ export default function MensajeReenviarCodigo() {
             </div>
             <div className="mensajeIniciarSesion-CuentaNueva-botones">
                 <button className='message_salir button'>Salir</button>
-                <button className='message_crearCuenta button'>Crear una cuenta</button>
-                <button className='message_iniciarSesion button'>Iniciar sesión</button>
+                <button className='message_crearCuenta button' onClick={handleSignupClick}>Crear una cuenta</button>
+                <button className='message_iniciarSesion button' onClick={handleLoginClick}>Iniciar sesión</button>
             </div>
         </div>
     )

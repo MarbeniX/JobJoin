@@ -11,6 +11,7 @@ import EtiquetaLocalizar from "../Images/localizar.png";
 import EtiquetaMonitorear from "../Images/EtiquetaMonitorear.png";
 import AboutFrame from "../Images/About Frame.png";
 import MensajeBienvenidaCuentaNueva from "../Messages/MensajeBienvenidaCuentaNueva.jsx";
+import { Link } from "react-router-dom";
 import "../Css/index.css";
 
 export default function Inicio() {
@@ -148,7 +149,7 @@ export default function Inicio() {
                             </div>
                         </div>
                         <div className="input-more-info">
-                            <h3>¿Ya tienes cuenta? Da click <nav>aquí</nav></h3>
+                            <h3>¿Ya tienes cuenta? Da click <Link to={"/login"}>aquí</Link></h3>
                             <p>
                                 Al registrarte, aceptas nuestro Aviso de privacidad y consientes el tratamiento de tus datos según lo establecido con nuestros Términos y condiciones.
                             </p>

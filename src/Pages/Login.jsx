@@ -24,8 +24,8 @@ export default function Login(){
                     <input type="text" placeholder="Contraseña"/>
                     <button>Continuar</button>
                 </form>
-                <p>¿No tienes una cuenta? Da click <Link className="login-link">aquí</Link></p>
-                <p>¿Olvidaste tu contraseña? Da click <Link className="login-link">aquí</Link></p>
+                <p>¿No tienes una cuenta? Da click <Link to={"/"} className="login-link">aquí</Link></p>
+                <p>¿Olvidaste tu contraseña? Da click <Link to={"/recuperarcontrasena"} className="login-link">aquí</Link></p>
             </div>
             <Footer />
         </>

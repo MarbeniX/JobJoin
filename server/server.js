@@ -12,8 +12,28 @@ const PORT = 5000;
 app.use(bodyParser.json());
 app.use(cors());
 
-// Crear tablas si no existen
-db.serialize(() => {
+//Funcion para eliminar datos y reiniciar la base de datos
+/*const resetTables = (Usuario) => {
+    db.run(`DELETE FROM ${Usuario}`, (err) => {
+        if (err) {
+            console.error(`Error al eliminar datos de la tabla ${Usuario}.`, err.message);
+        } else {
+            console.log(`Tabla ${Usuario} eliminada correctamente.`);
+        }
+    });
+
+    db.run(`DELETE FROM sqlite_sequence WHERE name= '${Usuario}'`, (err) => {
+        if (err) {
+            console.error(`Error al reiniciar la secuencia de la tabla ${Usuario}.`, err.message);
+        } else {
+            console.log(`Secuencia de la tabla ${Usuario} reiniciada correctamente.`);
+        }
+    });
+};*/
+    
+
+    // Crear tablas si no existen
+    db.serialize(() => {
     // Tabla Usuario
     db.run(`
         CREATE TABLE IF NOT EXISTS Usuario (
@@ -21,10 +41,12 @@ db.serialize(() => {
             nombre TEXT NOT NULL,
             correo TEXT NOT NULL UNIQUE,
             contraseña TEXT NOT NULL,
-            tipoUsuario TEXT CHECK(tipoUsuario IN ('Administrador', 'Empleador', 'Empleado')) NOT NULL
+            tipoUsuario TEXT CHECK(tipoUsuario IN ('Administrador', 'Empleador', 'Empleado')) NOT NULL,
+            resetToken TEXT,
+            resetTokenExpiration INTEGER
         )
     `);
-
+    //resetTables("Usuario");
     // Tabla Administrador
     db.run(`
         CREATE TABLE IF NOT EXISTS Administrador (

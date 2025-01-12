@@ -28,6 +28,8 @@ import MensajeSolicitudEnviada from "../Messages/MensajeSolicitudEnviada.jsx"
 import SolicitudesDeTrabajo from "./SolicitudesDeTrabajo.jsx"
 import ContactarFormMensaje from "../pop-up forms/ContactarForm.jsx"
 import SolicitudDeTrabajo from "../Components/SolicitudesDeTrabajo.jsx"
+import CancelarServicioForm from "../pop-up forms/CancelarServicioForm.jsx"
+import MensajeServicioCancelado from "../Messages/MensajeServicioCancelado.jsx"
 import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom'
 import { useUserContext, UserProvider } from "../UserProvider/UserProvider.jsx"
 
@@ -72,6 +74,8 @@ export default function App() {
                     <Route path="/reenviar-codigo" element={<MensajeReenviarCodigo />} />
                     <Route path="/confirmacion-reenvio-codigo" element={<MensajeConfirmaciónReenvioCodigo />} />
                     <Route path="/codigo-incorrecto" element={<MensajeCodigoIncorrecto />} />
+                    <Route path="/cancelar-servicio" element={<CancelarServicioForm />} />
+                    <Route path="/servicio-cancelado" element={<MensajeServicioCancelado />} />
             </Routes>
         </UserProvider>
         </Router>

@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 import db from "../db/connection.js"
 import fs from "fs";
 import { type } from "os";
+import { redirect } from "react-router-dom";
 
 const router = express.Router()
 // Middleware para procesar JSON
@@ -205,13 +206,13 @@ router.post("/recuperarContrasena", (req, res) => {
 
                     mail_rover((transporter) => {
                         // Enviar correo de recuperación
-                        const recoveryLink = `http://localhost:3000/recuperarContrasenaStep1/${token}`;
+                        const recoveryLink = `http://localhost:5173/recuperarContrasenaStep1`;
                         // Configuración de Nodemailer
                         const mailOptions = {
                             from: 'jobjoin.help@gmail.com',
                             to: correo,
                             subject: 'Recuperación de Contraseña',
-                            text: `Haz clic en el siguiente enlace para restablecer tu contraseña: ${recoveryLink}`
+                            text: `Haz clic en el siguiente enlace para restablecer tu contraseña: ${recoveryLink} y coloca el siguiente token: ${token} `
                         };
                         //Enviar el correo
                         transporter.sendMail(mailOptions, (error) => {
@@ -237,10 +238,10 @@ router.post("/recuperarContrasena", (req, res) => {
 });
 
 
-// Endpoint para restablecer contraseña
+// Endpoint para validar el token
 router.post("/recuperarContrasenaStep1", (req, res) => {
-    const { token, nuevaContraseña } = req.body;
-
+    const { token } = req.body;
+    
     const query = `
         SELECT * FROM Usuario
         WHERE resetToken = ? AND resetTokenExpiration > ?
@@ -251,6 +252,31 @@ router.post("/recuperarContrasenaStep1", (req, res) => {
         }
         if (!row) {
             return res.status(400).send({ message: "Token inválido o expirado" });
+        }
+
+        // Si el token es válido, redirigimos a un segundo paso donde se cambia la contraseña
+        res.status(200).send({ 
+            message: "Token válido", 
+            userId: row.idUsuario,
+            redirectTo: "/CrearUnaNuevaContraseña"
+        });
+    });
+});
+
+// Endpoint para cambiar la contraseña
+router.post("/recuperarContrasenaStep2", (req, res) => {
+    const { userId, nuevaContraseña } = req.body;
+
+    const query = `
+        SELECT * FROM Usuario
+        WHERE idUsuario = ?
+    `;
+    db.get(query, [userId], (err, row) => {
+        if (err) {
+            return res.status(500).send({ message: "Error interno", error: err });
+        }
+        if (!row) {
+            return res.status(400).send({ message: "Usuario no encontrado" });
         }
 
         const bcrypt = require("bcryptjs");
@@ -264,8 +290,7 @@ router.post("/recuperarContrasenaStep1", (req, res) => {
                 SET contraseña = ?, resetToken = NULL, resetTokenExpiration = NULL
                 WHERE idUsuario = ?
             `;
-
-            db.run(updateQuery, [hashedPassword, row.idUsuario], (err) => {
+            db.run(updateQuery, [hashedPassword, userId], (err) => {
                 if (err) {
                     return res.status(500).send({ message: "Error al actualizar la contraseña", error: err });
                 }
@@ -274,6 +299,7 @@ router.post("/recuperarContrasenaStep1", (req, res) => {
         });
     });
 });
+
 
 // Endpoint para reiniciar la secuencia de la tabla Usuario
 router.post("/reiniciarSecuencia", (req, res) => {

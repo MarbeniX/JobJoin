@@ -1,6 +1,6 @@
 import Inicio from "./Inicio"
 import RecuperarContrasena from "./RecuperarContrasena"  
-import RecuperarContrasenaStep1 from "./recuperarContrasenaStep1"  
+import RecuperarContrasenaStep1 from "./RecuperarContrasenaStep1"  
 import MensajeBienvenidaCuentaNueva from "../Messages/MensajeBienvenidaCuentaNueva"
 import BuscarSinRegistro from "./BuscarSinRegisitro"
 import MensajeReenviarCodigo from "../Messages/MensajeReenviarCodigo"

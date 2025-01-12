@@ -10,6 +10,8 @@ import EtiquetaDescubrir from "../Images/EtiquetaDescubrir.png";
 import EtiquetaLocalizar from "../Images/localizar.png";
 import EtiquetaMonitorear from "../Images/EtiquetaMonitorear.png";
 import AboutFrame from "../Images/About Frame.png";
+import MensajeBienvenidaCuentaNueva from "../Messages/MensajeBienvenidaCuentaNueva.jsx";
+import { Link } from "react-router-dom";
 import "../Css/index.css";
 import { useNavigate } from "react-router-dom";
 
@@ -22,6 +24,8 @@ export default function Inicio() {
         email: "",
         contraseña: "",
     });
+
+    const [mostrarBienvenida, setMostrarBienvenida] = useState(false);
 
     const [errors, setErrors] = useState({});
     const [serverResponse, setServerResponse] = useState("");

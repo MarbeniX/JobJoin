@@ -1,19 +1,31 @@
 import '../Css/MensajeBienvenidaCuentaNueva.css';
-import ErrorIcon from "../Images/ErrorIcon.png";
+import CandadoIcon from "../Images/CandadoIcon.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function MensajeReenviarCodigo() {
+
+    const navigate = useNavigate();
+    
+    const handleLoginClick = () => {
+        navigate('/login');
+    };
+
+    const handleSignupClick = () => {
+        navigate('/');
+    };
+
     return (
 <div className="CuentaNueva-div">
             <div className="CuentaNueva-inicio">
-                <img src={ErrorIcon} alt="HappyGreenFace" className='ErrorIcon'/>
+                <img src={CandadoIcon} alt="HappyGreenFace" className='CandadoIcon'/>
                 <div className="CuentaNueva-mensaje">
-                    <h1>Código incorrecto</h1>
-                    <p>El código ingresado no es válido. Por favor, verifica e intenta nuevamente.</p>
+                    <h1>Contraseña actualizada</h1>
+                    <p>Hemos actualizado su contraseña</p>
                 </div>
             </div>
             <div className="CuentaNueva-botones">
-                <button className="CN-B-salir">Salir</button>
-                <button className="CN-B-iniciar">Reintentar</button>
+                <button className="CN-B-salir" onClick={handleSignupClick}>Salir</button>
+                <button className="CN-B-iniciar" onClick={handleLoginClick}>Iniciar sesión</button>
             </div>
         </div>
     )

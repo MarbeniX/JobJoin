@@ -70,6 +70,7 @@ router.post("/register", (req, res) => {
             res.status(201).send({ success: true, message: "Usuario registrado con éxito" });
         }
     });
+    console.log("INFO:Nuevo usuario registrado.")
 });
 
 
@@ -92,6 +93,7 @@ router.post("/login", (req, res) => {
             res.status(401).send({ success: false, message: "Credenciales incorrectas" });
         }
     });
+    console.log(`INFO: El usuario ${correo}, inicio sesión correctamente.`)
 });
 
 export default router;

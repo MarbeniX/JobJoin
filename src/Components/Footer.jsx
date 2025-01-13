@@ -1,33 +1,33 @@
 import "../Css/Headers&Footer.css";
 
 export default function Footer() {
-    return(
+    return (
         <footer className="inicio-footer">
             <div className="footer-info">
-                <h4>JobJoin</h4>
-                <p>Acerca de</p>
-                <p>Contacto</p>
+                <h5>JobJoin</h5>
+                <a href="#">Acerca de</a>
+                <a href="#">Contacto</a>
             </div>
             <div className="footer-info">
-                <h4>Información</h4>
-                <p>Términos y condiciones</p>
-                <p>Política de privacidad</p>
-                <p>Preguntas y condiciones</p>
+                <h5>Información</h5>
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Preguntas y condiciones</a>
             </div>
             <div className="footer-info">
-                <h4>Empleados</h4>
-                <p>Cómo contratar</p>
-                <p>Beneficios</p>
+                <h5>Empleados</h5>
+                <a href="#">Cómo contratar</a>
+                <a href="#">Beneficios</a>
             </div>
             <div className="footer-info">
-                <h4>Trabajadores</h4>
-                <p>Beneficios</p>
+                <h5>Trabajadores</h5>
+                <a href="#">Beneficios</a>
             </div>
             <div className="footer-info">
-                <h4>Soporte</h4>
-                <p>Ayuda</p>
-                <p>Reportar un problema</p>
+                <h5>Soporte</h5>
+                <a href="#">Ayuda</a>
+                <a href="#">Reportar un problema</a>
             </div>
         </footer>
-    )
+    );
 }

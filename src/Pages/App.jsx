@@ -28,6 +28,10 @@ import MensajeSolicitudEnviada from "../Messages/MensajeSolicitudEnviada.jsx"
 import SolicitudesDeTrabajo from "./SolicitudesDeTrabajo.jsx"
 import ContactarFormMensaje from "../pop-up forms/ContactarForm.jsx"
 import SolicitudDeTrabajo from "../Components/SolicitudesDeTrabajo.jsx"
+import CancelarServicioForm from "../pop-up forms/CancelarServicioForm.jsx"
+import MensajeServicioCancelado from "../Messages/MensajeServicioCancelado.jsx"
+import TrabajoActivo from "./TrabajoActivo.jsx"
+import TrabajoActivoStatus from "../Components/TrabajoActivoStatus.jsx"
 import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom'
 import { useUserContext, UserProvider } from "../UserProvider/UserProvider.jsx"
 
@@ -36,7 +40,6 @@ export default function App() {
 
     return (
         <Router>
-            {/*<UserProvider>*/}
                 <Routes>
                     <Route path="/" element={<Inicio />} />
                         <Route path="/contrasena-actualizada" element={<MensajeContraseñaActualizada />} />
@@ -69,7 +72,6 @@ export default function App() {
                         <Route path="/confirmacion-reenvio-codigo" element={<MensajeConfirmaciónReenvioCodigo />} />
                         <Route path="/codigo-incorrecto" element={<MensajeCodigoIncorrecto />} />
                 </Routes>
-            {/*</UserProvider>*/}
         </Router>
     )
 }

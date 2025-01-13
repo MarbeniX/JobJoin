@@ -71,7 +71,11 @@ export default function Inicio() {
 
                 if (response.data.success) {
                     setServerResponse("Registro exitoso. Redirigiendo al inicio...");
-                    setTimeout(() => navigate("/bienvenida-cuenta-nueva"), 1000);
+                    setMostrarBienvenida(true);
+                    setTimeout(() => {
+                        setMostrarBienvenida(false);
+                        navigate("/login");
+                    }, 3000);
                 } else {
                     setServerResponse(response.data.message || "Error al registrar usuario.");
                 }
@@ -90,6 +94,12 @@ export default function Inicio() {
     return (
         <div className="inicio-main-div">
             <Header />
+
+            {mostrarBienvenida && (
+                <div className="mensaje-bienvenida-container">
+                    <MensajeBienvenidaCuentaNueva />
+                </div>
+            )}
             <div className="inicio-div">
                 <div className="inicio-presentacion-div">
                     <img src={PeopleWorking} alt="PeopleWorking" />

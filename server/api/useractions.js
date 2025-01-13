@@ -5,6 +5,8 @@ import { google } from "googleapis";
 import jwt from "jsonwebtoken";
 import db from "../db/connection.js"
 import fs from "fs";
+import multer from "multer";
+import path from "path";
 import { type } from "os";
 import { redirect } from "react-router-dom";
 
@@ -36,6 +38,16 @@ const mail_rover = async (callback) => {
         callback(nodemailer.createTransport(accountTransport));
     });
 };
+    //configuracion de multer para almacenamiento de archivos
+    const storage = multer.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, './public/uploads');
+        },
+        filename: (req, file, cb) => {
+            cb(null,  + '-' + Date.now() + path.extname(file.originalname));
+        }
+    });
+    const upload = multer({ storage: storage });
 
 router.get("/verify-email", (req, res) => {
     const { correo } = req.query;
@@ -297,6 +309,31 @@ router.post("/recuperarContrasenaStep2", (req, res) => {
                 res.status(200).send({ message: "Contraseña restablecida correctamente" });
             });
         });
+    });
+});
+
+//Endpoint para crear perfil de trabajador
+router.post("/crear-trabajador", upload.single("fotoPerfil"), (req, res) => {
+    console.log("Datos recibidos en el perfil:", req.body);
+    const { location, service, tariff, phone, description, userId } = req.body;
+    const fotoPerfil = req.file ? req.file.filename : null;
+
+    //Verificar si todos los campos estan presentes en el cuerpo de la solicitud
+    if (!location || !service || !tariff || !phone || !description || !userId) {
+        return res.status(400).send({ success: false, message: "Todos los campos son obligatorios" });
+    }
+
+    const query = `
+        INSERT INTO Perfil (idEmpleado, descripcion, habilidades, fotoPerfil)
+        VALUES (?, ?, ?, ?)
+    `;
+    // Ejecutar la consulta
+    db.run(query, [userId, description, service, fotoPerfil, location, tariff, phone], function (err) {
+        if (err) {
+            return res.status(500).send({ success: false, message: "Error interno al crear el perfil", error: err });
+        }
+        // Responder con éxito y el ID del perfil recién creado
+        res.status(201).send({ success: true, message: "Perfil creado correctamente", perfilId: this.lastID });
     });
 });
 

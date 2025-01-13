@@ -51,7 +51,7 @@ export default function Login() {
                     setUser(response.data.user);
                     //Guardar usuario en el local storage
                     localStorage.setItem("user", JSON.stringify(response.data.user));
-
+                    console.log("Usuario guardado en el contexto y en el local storage", response.data.user);
                     setServerResponse("Inicio de sesión exitoso. Redirigiendo...");
                     setTimeout(() => navigate("/busqueda-con-registro"), 1000);
                 } else {

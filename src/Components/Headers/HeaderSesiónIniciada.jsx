@@ -10,7 +10,7 @@ export default function HeaderSesiónIniciada(){
             <img src={JobJoinLogo} alt="JobJoin Logo" className="header-sesion-iniciada__logo"/>
             <div className="headerSesionIniciada-links">
                 <button>Buscar</button>
-                <button>Trbajo activo</button>
+                <button>Trabajo activo</button>
                 <img src={Campanita} alt="Campana de notificaciones" />
                 <div className="headerSesionIniciada-links-profile">
                     <img src={ProfilePhoto1} alt="Foto de perfil" />

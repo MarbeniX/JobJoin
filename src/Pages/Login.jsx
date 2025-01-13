@@ -6,8 +6,10 @@ import Footer from "../Components/Footer";
 import GoogleLogo from "../Images/GoogleLogo.png";
 import InicioFrame from "../Images/InicioDivisor.png";
 import "../Css/Login.css";
+import { useUserContext } from "../UserProvider/UserProvider";
 
 export default function Login() {
+    const { user, setUser} = useUserContext();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: "",
@@ -45,6 +47,11 @@ export default function Login() {
                 });
 
                 if (response.data.success) {
+                    //Guardar usuario en el contexto
+                    setUser(response.data.user);
+                    //Guardar usuario en el local storage
+                    localStorage.setItem("user", JSON.stringify(response.data.user));
+                    console.log("Usuario guardado en el contexto y en el local storage", response.data.user);
                     setServerResponse("Inicio de sesión exitoso. Redirigiendo...");
                     setTimeout(() => navigate("/busqueda-con-registro"), 1000);
                 } else {
@@ -52,8 +59,13 @@ export default function Login() {
                 }
             } catch (error) {
                 if (error.response && error.response.data && error.response.data.message) {
-                    setServerResponse(error.response.data.message);
+                    // Respuesta del servidor con un código de estado fuera de 2xx
+                    setServerResponse(error.response.data.message || "Error en la solicitud al servidor.");
+                } else if(error.request){
+                    // No se recibió respuesta del servidor
+                    setServerResponse("Error al conectar con el servidor. Inténtalo nuevamente.");
                 } else {
+                    // Error en la configuración de la solicitud
                     setServerResponse("Error al conectar con el servidor. Inténtalo nuevamente.");
                 }
             }

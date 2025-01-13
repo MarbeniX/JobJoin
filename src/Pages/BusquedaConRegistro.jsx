@@ -5,8 +5,23 @@ import FlechaIcon from "../Images/FlechaIcon.png";
 import Footer from "../Components/Footer.jsx";
 import PerfilTrabajadorViñeta from '../Components/PerfilTrabajadorViñeta.jsx';
 import Header from "../Components/Headers/HeaderSesiónIniciada.jsx"
+import { useUserContext } from '../UserProvider/UserProvider.jsx';
+import { Navigate } from 'react-router-dom';
 
 export default function BuscarSinRegistro() {
+    //Obten el usuario del contexto
+    const { user, loading } = useUserContext();
+    
+    //Mostrar un spinner mientras se carga el usuario
+    if(loading){
+        return <div>Cargando...</div>;
+    }
+
+    if(!user){
+        //Redirigir a la página de inicio de sesión
+        return <Navigate to="/iniciar-sesion-para-continuar" />;
+    }
+
     return(
         <div className='BuscarSinRegistro-div'>
             <Header />

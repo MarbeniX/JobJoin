@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
 }
 .InicioPerfilDeTrabajador > button{
     background-color: #4DA674;
@@ -15,7 +15,7 @@
     font-size: 1rem;
     padding: 0.8rem;
     margin-top: 2rem;
-    margin-bottom: 7rem;
+    margin-bottom: 3rem;
 }
 
 /*Solicitudes de trabajo*/
@@ -32,4 +32,25 @@
     font-size: 3rem;
     font-weight: 700;
     color: #023336;
+}
+
+/*SinTrabajoActivo*/
+.SinTrabajoActivo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+}
+.SinTrabajoActivo > button{
+    background-color: #4DA674;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }

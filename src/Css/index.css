@@ -5,7 +5,7 @@
 .inicio-main-div{
   height: 100vh;
     width: 100vw;
-    background-color: white;
+    background-color: #F7F8F8;
 }
 
 .inicio-login-button{
@@ -13,12 +13,6 @@
 }
 .inicio-signup-button{
   color: #3D845C;
-}
-.server-response {
-  color: #333;
-  font-size: 1em;
-  margin-top: 10px;
-  text-align: center;
 }
 .inicio-div{
   display: flex;
@@ -82,35 +76,49 @@
   margin-top: 3%;
   margin-bottom: 3%;
 }
+/* ---- FORMULARIO -----*/
 .input-data{
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   width: 100%;
 }
 .input-nombre-apellido{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 0.8rem;
-  width: 100%;
+  gap: 1rem;
 }
 .input-email-contraseña{
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  width: 100%;
+  gap: 1rem;
 }
 .input-nombre-apellido input, .input-email-contraseña input{
   flex-grow: 1;
   background-color: #E9ECEC;
   border: none;
-  padding: 2%;
+  padding: 0.8rem 1rem;
   border-radius: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
 }
 .input-nombre-apellido input::placeholder, .input-email-contraseña input::placeholder{
   color: rgba(0, 0, 0, 0.3); /* Gris claro */
   opacity: 1;
+}
+.input-nombre-apellido input {
+  flex: 1; /* Ocupa el mismo espacio los dos inputs */
+}
+.input-nombre-apellido input.input-error,
+.input-email-contraseña input.input-error {
+  border: 2px solid #E70909; /* Borde rojo */
+}
+/* Respuesta del servidor */
+.server-response {
+  color: #E70909; 
+  font-size: 1em; /* Tamaño del texto */
+  margin-top: 10px; /* Espaciado superior */
+  text-align: center; /* Centrado del texto */
+  font-weight: bold; /* Texto en negrita para destacar */
 }
 .input-more-info{
   display: flex;
@@ -151,31 +159,49 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
+  width: 60%; /* Ajustado para un diseño más estrecho */
+  margin: 0 auto; /* Centrado horizontal */
+  padding-top: 2rem;
 }
 .AboutFrame{
-  width: 100%;
+  width: 60%;
 }
 .about-txt h3{
   font-weight: 600;
   letter-spacing: 0.05em;
   color: #023336;
   margin-bottom: 0.5em;
+  font-size: 1.5rem; /* Tamaño ajustado */
 }
 .about-txt p{
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #023336;
   margin-top: 0;
 }
 .about-images{
   display: flex;
-  flex-direction: row;
-  margin-top: 1em;
+  justify-content: space-between; /* Distribuye los elementos uniformemente */
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 1.5rem; /* Espaciado entre los íconos */
   width: 100%;
 }
-.about-images div{
-  width: 25%;
+.about-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; /* Espaciado entre el ícono y el texto */
+  max-width: 20%; /* Ajusta el tamaño máximo */
+}
+.about-item img {
+  width: 50px; /* Tamaño del ícono */
+  height: 50px;
+}
+
+.about-item p {
+  font-size: 0.9rem; /* Ajusta el tamaño del texto */
+  color: #023336; /* Color del texto */
+  margin: 0;
+  text-align: center;
 }
 

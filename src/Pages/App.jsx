@@ -21,7 +21,6 @@ import MensajeEstasSeguroDeSalir from "../Messages/MensajeEstasSeguroDeSalir.jsx
 import PerfilTrabajadorComentarios from "./PerfilTrabajadorComentarios.jsx"
 import ComentariosPerfilTrabajadorComentarios from "../Components/ComentariosPerfilTrabajadorComentarios.jsx"
 import PerfilTrabajadorViñeta from "../Components/PerfilTrabajadorViñeta.jsx"
-import ContactarForms from "../pop-up forms/ContactarForm.jsx"
 import Login from "./Login.jsx"
 import ConectarTrabajadorPopup from "../pop-up forms/ConectarTrabajadorPopup.jsx"
 import MensajeSolicitudEnviada from "../Messages/MensajeSolicitudEnviada.jsx"

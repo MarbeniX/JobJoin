@@ -1,17 +1,21 @@
+import React from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import HappyGreemFace from "../Images/HappyGreenFace.png";
 import { useNavigate } from "react-router-dom";
 import '../Css/MensajeBienvenidaCuentaNueva.css';
 
-export default function MensajeBienvenidaCuentaNueva() {
-
+const MensajeBienvenidaCuentaNueva = () => {
     const navigate = useNavigate();
-    
+
     const handleLoginClick = () => {
         navigate('/login');
+        toast.dismiss();
     };
 
     const handleSignupClick = () => {
         navigate('/');
+        toast.dismiss();
     };
 
     return (
@@ -24,9 +28,22 @@ export default function MensajeBienvenidaCuentaNueva() {
                 </div>
             </div>
             <div className="CuentaNueva-botones">
-                <button className="CN-B-salir" onClick={handleSignupClick}>Salir</button>
                 <button className="CN-B-iniciar" onClick={handleLoginClick}>Iniciar sesión</button>
             </div>
         </div>
-    )
-}
+    );
+};
+
+export const showWelcomeToast = () => {
+    toast(<MensajeBienvenidaCuentaNueva />, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+};
+
+export default MensajeBienvenidaCuentaNueva;

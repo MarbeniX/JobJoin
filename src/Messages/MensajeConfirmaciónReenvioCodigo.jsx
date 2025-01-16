@@ -1,9 +1,12 @@
 import '../Css/MensajeBienvenidaCuentaNueva.css';
 import MailIcon from "../Images/MailIcon.png";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function MensajeReenviarCodigo() {
     return (
-<div className="CuentaNueva-div">
+        <div className="CuentaNueva-div">
             <div className="CuentaNueva-inicio">
                 <img src={MailIcon} alt="HappyGreenFace" className='MailIcon'/>
                 <div className="CuentaNueva-mensaje">
@@ -18,3 +21,14 @@ export default function MensajeReenviarCodigo() {
         </div>
     )
 }
+export const showWelcomeToast = () => {
+    toast(<MensajeReenviarCodigo />, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+};

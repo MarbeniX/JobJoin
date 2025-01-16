@@ -11,9 +11,12 @@ import EtiquetaComunicar from "../Images/contactar.png";
 import EtiquetaMonitorear from "../Images/EtiquetaMonitorear.png";
 import AboutFrame from "../Images/About Frame.png";
 import MensajeBienvenidaCuentaNueva from "../Messages/MensajeBienvenidaCuentaNueva.jsx";
-import { Link } from "react-router-dom";
 import "../Css/index.css";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import { showWelcomeToast } from '../Messages/MensajeBienvenidaCuentaNueva';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function Inicio() {
     const navigate = useNavigate();
@@ -24,8 +27,6 @@ export default function Inicio() {
         email: "",
         contraseña: "",
     });
-
-    const [mostrarBienvenida, setMostrarBienvenida] = useState(false);
 
     const [errors, setErrors] = useState({});
     const [serverResponse, setServerResponse] = useState("");
@@ -71,11 +72,7 @@ export default function Inicio() {
 
                 if (response.data.success) {
                     setServerResponse("Registro exitoso. Redirigiendo al inicio...");
-                    setMostrarBienvenida(true);
-                    setTimeout(() => {
-                        setMostrarBienvenida(false);
-                        navigate("/login");
-                    }, 3000);
+                    showWelcomeToast();
                 } else {
                     setServerResponse(response.data.message || "Error al registrar usuario.");
                 }
@@ -90,15 +87,10 @@ export default function Inicio() {
             setServerResponse("Por favor, completa todos los campos correctamente.");
         }
     };
+    
     return (
         <div className="inicio-main-div">
             <Header />
-
-            {mostrarBienvenida && (
-                <div className="mensaje-bienvenida-container">
-                    <MensajeBienvenidaCuentaNueva />
-                </div>
-            )}
             <div className="inicio-div">
                 <div className="inicio-presentacion-div">
                     <img src={PeopleWorking} alt="PeopleWorking" />
@@ -168,6 +160,7 @@ export default function Inicio() {
                         </p>
                         <button type="submit">Continuar</button>
                         {serverResponse && <p className="server-response">{serverResponse}</p>}
+                        <ToastContainer />
                     </div>
                 </form>
                 <img src={AboutFrame} alt="About Frame" className="AboutFrame" />

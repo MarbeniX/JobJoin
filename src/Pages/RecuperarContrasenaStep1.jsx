@@ -45,7 +45,7 @@ function RecuperarContrasena() {
 
             setMessage(response.data.message);
             if(response.data.redirectTo){
-                navigate("/CrearUnaNuevaContraseña");
+                navigate("/crear-nueva-contrasena");
             }
 
         } catch (error) {
@@ -92,7 +92,9 @@ function RecuperarContrasena() {
                             </div>
 
                             <div className="form-group">
-                                <button type="submit">Enviar código</button>
+                                <button type="submit"
+                                    onClick={handleSubmit}
+                                >Enviar código</button>
                             </div>
                         </form>
                     </div>

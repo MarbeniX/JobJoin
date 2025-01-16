@@ -278,14 +278,18 @@ router.post("/recuperarContrasenaStep1", (req, res) => {
         res.status(200).send({ 
             message: "Token válido", 
             userId: row.idUsuario,
-            redirectTo: "/CrearUnaNuevaContraseña"
+            redirectTo: "/crear-nueva-contrasena"
         });
     });
 });
 
 // Endpoint para cambiar la contraseña
-router.post("/recuperarContrasenaStep2", (req, res) => {
+router.post("/crearNuevaContrasena", (req, res) => {
     const { userId, nuevaContraseña } = req.body;
+    console.log("Solicitud recibida para cambiar contraseña"); // Log inicial
+    console.log("Datos recibidos:", { userId, nuevaContraseña });
+    console.log("Solicitud recibida para cambiar contraseña"); // Log inicial
+    console.log("Datos recibidos:", { userId, nuevaContraseña }); 
 
     const query = `
         SELECT * FROM Usuario
@@ -293,17 +297,22 @@ router.post("/recuperarContrasenaStep2", (req, res) => {
     `;
     db.get(query, [userId], (err, row) => {
         if (err) {
+            console.error("Error al consultar la base de datos:", err);
             return res.status(500).send({ message: "Error interno", error: err });
         }
         if (!row) {
+            console.warn("Usuario no encontrado en la base de datos con idUsuario:", userId);
             return res.status(400).send({ message: "Usuario no encontrado" });
         }
+        console.log("Usuario encontrado:", row);
 
         const bcrypt = require("bcryptjs");
         bcrypt.hash(nuevaContraseña, 10, (err, hashedPassword) => {
             if (err) {
+                console.error("Error al encriptar la contraseña:", err);
                 return res.status(500).send({ message: "Error al encriptar la contraseña", error: err });
             }
+            console.log("Contraseña encriptada correctamente");
 
             const updateQuery = `
                 UPDATE Usuario
@@ -312,9 +321,11 @@ router.post("/recuperarContrasenaStep2", (req, res) => {
             `;
             db.run(updateQuery, [hashedPassword, userId], (err) => {
                 if (err) {
+                    console.error("Error al actualizar la contraseña en la base de datos:", err);
                     return res.status(500).send({ message: "Error al actualizar la contraseña", error: err });
                 }
-                res.status(200).send({ message: "Contraseña restablecida correctamente" });
+                console.log("Contraseña actualizada correctamente para el usuario con idUsuario:", userId);
+                res.status(200).send({ message: "Contraseña restablecida correctamente", redirectTo: "/login"});
             });
         });
     });

@@ -113,7 +113,7 @@
   background-color: #f0f0f0;
 }
 
-.headerSesionIniciada-links {
+.headerSesionIniciada-links{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -122,12 +122,13 @@
   margin-right: 7%;
 }
 
-.headerSesionIniciada-links button {
+.headerSesionIniciada-links a {
   border: none;
   background-color: transparent;
   color: #023336;
   font-weight: 500;
   font-size: 1em;
+  cursor: pointer;
 }
 
 .headerSesionIniciada-links>img {

@@ -17,9 +17,6 @@
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
-.InicioPerfilDeTrabajador > img{
-    margin-top: 2.5rem;
-}
 .InicioPerfilDeTrabajador > h1{
     font-size: 3rem;
 }
@@ -31,7 +28,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
-    margin-bottom: 4rem;
     gap: 1rem;
 }
 .InicioPerfilDeTrabajador-h1{
@@ -49,7 +45,7 @@
     margin-top: 1rem;
     margin-bottom: 6rem;
 }
-.SinTrabajoActivo > button{
+.SinTrabajoActivo > button, .InicioPerfilDeTrabajador-Texto > button{
     background-color: #4DA674;
     color: white;
     border: none;

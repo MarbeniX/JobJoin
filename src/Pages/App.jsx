@@ -26,12 +26,12 @@ import Login from "./Login.jsx"
 import ConectarTrabajadorPopup from "../pop-up forms/ConectarTrabajadorPopup.jsx"
 import MensajeSolicitudEnviada from "../Messages/MensajeSolicitudEnviada.jsx"
 import SolicitudesDeTrabajo from "./SolicitudesDeTrabajo.jsx"
-import ContactarFormMensaje from "../pop-up forms/ContactarForm.jsx"
 import SolicitudDeTrabajo from "../Components/SolicitudesDeTrabajo.jsx"
 import CancelarServicioForm from "../pop-up forms/CancelarServicioForm.jsx"
 import MensajeServicioCancelado from "../Messages/MensajeServicioCancelado.jsx"
 import TrabajoActivo from "./TrabajoActivo.jsx"
 import TrabajoActivoStatus from "../Components/TrabajoActivoStatus.jsx"
+import SinTrabajoActivo from "./SinTrabajoActivo.jsx"
 import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom'
 import { useUserContext, UserProvider } from "../UserProvider/UserProvider.jsx"
 
@@ -57,8 +57,6 @@ export default function App() {
                 <Route path="/perfil-trabajador-comentarios" element={<PerfilTrabajadorComentarios />} />
                 <Route path="/comentarios-perfil-trabajador" element={<ComentariosPerfilTrabajadorComentarios />} />
                 <Route path="/perfil-trabajador-viñeta" element={<PerfilTrabajadorViñeta />} />
-                <Route path="/contactar-form" element={<ContactarForms />} />
-                <Route path="/contactar-form-mensaje" element={<ContactarFormMensaje />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/conectar-trabajador" element={<ConectarTrabajadorPopup />} />
                 <Route path="/solicitud-enviada" element={<MensajeSolicitudEnviada />} />
@@ -71,6 +69,11 @@ export default function App() {
                 <Route path="/reenviar-codigo" element={<MensajeReenviarCodigo />} />
                 <Route path="/confirmacion-reenvio-codigo" element={<MensajeConfirmaciónReenvioCodigo />} />
                 <Route path="/codigo-incorrecto" element={<MensajeCodigoIncorrecto />} />
+                <Route path="/cancelar-servicio" element={<CancelarServicioForm />} />
+                <Route path="/servicio-cancelado" element={<MensajeServicioCancelado />} />
+                <Route path="/trabajo-activo" element={<TrabajoActivo />} />
+                <Route path="/trabajo-activo-status" element={<TrabajoActivoStatus />} />
+                <Route path="/sin-trabajo-activo" element={<SinTrabajoActivo />} />
             </Routes>
         </Router>
     )

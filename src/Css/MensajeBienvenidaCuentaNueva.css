@@ -39,3 +39,37 @@
     color: black;
     background-color: #F3FDFD;
 }
+
+/*Mensaje confirmar guardar cambios*/
+.ConfiramrGuardarCambios-mensaje > h1{
+    font-weight: 700;
+    font-size: small;
+}
+.ConfiramrGuardarCambios-mensaje > p{
+    font-size: small;
+}
+.ConfirmarGuardarCambios-div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.ConfirmarGuardarCambios-inicio{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+}
+.ConfirmarGuardarCambios-botones{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.ConfirmarGuardarCambios-botones > button{
+    color: black;
+    background-color: #F3FDFD;
+    font-size: small;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: #023336;
+}

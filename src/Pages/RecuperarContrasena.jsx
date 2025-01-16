@@ -13,7 +13,7 @@ function RecuperarContrasena() {
         e.preventDefault();
         try {
             const response = await axios.post("http://localhost:5000/users/recuperarContrasena", {
-               correo: email,
+                correo: email,
             });
             setMessage(response.data.message);
         } catch (error) {

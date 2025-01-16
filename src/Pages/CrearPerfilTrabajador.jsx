@@ -6,6 +6,10 @@ import "../Css/CrearPerfilTrabajador.css"
 import { useUserContext } from "../UserProvider/UserProvider"
 import { useState } from "react"
 import axios from "axios"
+import { ToastContainer } from 'react-toastify';
+import { showConfirmSaveToast } from '../Messages/MensajeConfirmarGuardarCambios';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function CrearPerfilTrabajador() {
     const { user } = useUserContext();
     const [fotoPerfil, setFotoPerfil] = useState(""); // Para almacenar la imagen
@@ -53,6 +57,10 @@ export default function CrearPerfilTrabajador() {
         }
     };
 
+    // Mostrar mensaje de confirmación al guardar los cambios
+    const handleSaveChanges = () => {
+        showConfirmSaveToast();
+    };
     return (
     <>
             <Header />
@@ -125,9 +133,10 @@ export default function CrearPerfilTrabajador() {
                         <button type="button" className="CrearPerfilTrabajador-button1">
                             Cancelar
                         </button>
-                        <button type="submit" className="CrearPerfilTrabajador-button2">
+                        <button type="submit" className="CrearPerfilTrabajador-button2" onClick={handleSaveChanges}>
                             Guardar información
                         </button>
+                        <ToastContainer />
                     </div>
                 </div>
             </form>

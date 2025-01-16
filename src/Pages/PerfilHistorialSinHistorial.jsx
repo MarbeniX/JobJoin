@@ -30,6 +30,7 @@ export default function PerfilHistorialSinHistorial(){
                             <p>Empieza a aprovechar al máximo JobJoin y contrata a los mejores</p>
                         </div>
                         <button className="perfilHistorial-historial-registro-button">Buscar un servicio</button>
+                        {/*Todo este div se genera en caso de que si haya un registro, en caso de que no se renderiza el siguiente div mayor de abajo perfilHistorialSinHistorial-configuración  */}
                         <div className="perfilHistorial-historial-registro-registros">
                             <div className="perfilHistorialSinHistorial-registros">
                                 <p className="perfilHistorialSinHistorial-titulosComponentes">Todas</p>
@@ -37,7 +38,6 @@ export default function PerfilHistorialSinHistorial(){
                                     <RegistroDeServicios/>
                                     <RegistroDeServicios/>
                                     <RegistroDeServicios/>
-
                                 </div>
                             </div>
                             <div>

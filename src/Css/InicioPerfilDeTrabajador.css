@@ -6,7 +6,7 @@
     margin-top: 1rem;
     margin-bottom: 5rem;
 }
-.InicioPerfilDeTrabajador > button{
+.InicioPerfilDeTrabajador > a{
     background-color: #4DA674;
     color: white;
     border: none;
@@ -16,6 +16,12 @@
     padding: 0.8rem;
     margin-top: 2rem;
     margin-bottom: 3rem;
+}
+.InicioPerfilDeTrabajador > img{
+    margin-top: 2.5rem;
+}
+.InicioPerfilDeTrabajador > h1{
+    font-size: 3rem;
 }
 
 /*Solicitudes de trabajo*/

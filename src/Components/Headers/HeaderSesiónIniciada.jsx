@@ -34,8 +34,8 @@ export default function HeaderSesiónIniciada(){
             </div>
             {menuVisible && (
                 <div className="headerSesionIniciada-links-menu">
-                    <a>Mi perfil personal</a>
-                    <a>Mi perfil de trabajador</a>
+                    <a href="/perfil-historial-sin-historial">Mi perfil personal</a>
+                    <a href="/inicio-perfil-trabajador">Mi perfil de trabajador</a>
                     <a>Centro de ayuda</a>
                     <a>Cerrar sesión</a>
                 </div>

@@ -20,12 +20,23 @@ function RecuperarContrasena() {
     const handleReenviarCodigo= async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/users/recuperarContrasena", {
-               correo: email,
+            const response = await axios.post("http://localhost:5000/users/crearNuevaContrasena", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ userId: user.idUsuario, nuevaContraseña: password }),
             });
-            setMessage(response.data.message);
+
+            const data = await response.json();
+            if (response.ok) {
+                alert(data.message);
+            } else {
+                alert(data.message || "Error al actualizar la contraseña");
+            }
         } catch (error) {
-            setMessage(error.response.data.message);
+            console.error("Error:", error);
+            alert("Hubo un problema al conectarse al servidor");
         }
     };
 

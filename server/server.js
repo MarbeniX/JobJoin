@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 
 import db from "./db/connection.js"
 import userActions from "./api/useractions.js"
+import userActions2 from "./api/useractions2.js"
 
 // Configuración de Express
 const app = express();
@@ -110,6 +111,7 @@ app.use(cors());
 app.use(express.json());
 // Endpoint para las acciones del usuario
 app.use('/users', userActions);
+app.use('/password', userActions2);
 // Iniciar servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);

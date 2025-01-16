@@ -19,7 +19,7 @@ export default function CrearNuevaContraseña() {
     
         try {
             // Realiza la solicitud POST directamente con los datos del cuerpo
-            const response = await axios.post("http://localhost:5000/users/crearNuevaContrasena", {
+            const response = await axios.post("http://localhost:5000/password/crearNuevaContrasena", {
                 userId: user.idUsuario,
                 nuevaContraseña: password,
             });

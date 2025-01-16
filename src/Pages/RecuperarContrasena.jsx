@@ -3,6 +3,7 @@ import Header from "../Components/Headers/HeaderRecuperarContraseña"
 import React, { useState } from "react";
 import formulario from "../Images/formulario.png";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 function RecuperarContrasena() {
@@ -46,7 +47,7 @@ function RecuperarContrasena() {
                                     />
                             </div>
                             <div className="form-group">
-                                <button type="submit">Enviar código</button>
+                                <Link type="submit" onClick={handleSubmit}>Enviar código</Link>
                             </div>
                         </form>
                         {message && <p>{message}</p>}

@@ -85,7 +85,7 @@ body {
 .form-group input::placeholder{
     opacity: 0.6;
 }
-.form-group button {
+.form-group a {
     padding: 10px;
     background-color: #023336;
     color: white;

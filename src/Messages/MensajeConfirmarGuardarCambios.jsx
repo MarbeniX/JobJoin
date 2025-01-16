@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Css/MensajeBienvenidaCuentaNueva.css';
 import ErrorIcon from "../Images/IniciaSesiónParaContinuar.png";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -17,7 +18,7 @@ export default function MensajeConfirmarGuardarCambios() {
                 </div>
             </div>
             <div className="ConfirmarGuardarCambios-botones">
-                <button className="CN-B-iniciar">Guardar cambios</button>
+                <Link to="/perfil-trabajador-comentarios" className="CN-B-iniciar">Guardar cambios</Link>
             </div>
         </div>
     );

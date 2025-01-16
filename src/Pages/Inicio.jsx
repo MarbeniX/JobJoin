@@ -10,7 +10,6 @@ import EtiquetaDescubrir from "../Images/EtiquetaDescubrir.png";
 import EtiquetaComunicar from "../Images/contactar.png";
 import EtiquetaMonitorear from "../Images/EtiquetaMonitorear.png";
 import AboutFrame from "../Images/About Frame.png";
-import MensajeBienvenidaCuentaNueva from "../Messages/MensajeBienvenidaCuentaNueva.jsx";
 import "../Css/index.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';

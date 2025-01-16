@@ -65,7 +65,7 @@
     gap: 0.5rem;
     justify-content: center;
 }
-.ConfirmarGuardarCambios-botones > button{
+.ConfirmarGuardarCambios-botones > a{
     color: black;
     background-color: #F3FDFD;
     font-size: small;

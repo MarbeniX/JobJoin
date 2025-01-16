@@ -51,9 +51,6 @@ export default function PerfilTrabajadorComentarios(){
                 </div>
                 <div>
                     <Comentarios/>
-                    <Comentarios/>
-                    <Comentarios/>
-                    <Comentarios/>
                 </div>
 
                 <div className="VistaPerfilTrabajador__reviews__more">

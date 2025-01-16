@@ -7,6 +7,8 @@ import GoogleLogo from "../Images/GoogleLogo.png";
 import InicioFrame from "../Images/InicioDivisor.png";
 import "../Css/Login.css";
 import { useUserContext } from "../UserProvider/UserProvider";
+import { ToastContainer } from "react-toastify";
+import { showWelcomeBackToast } from "../Messages/MensajeGustoTenerteDeVuelta";
 
 export default function Login() {
     const { user, setUser} = useUserContext();
@@ -53,7 +55,8 @@ export default function Login() {
                     localStorage.setItem("user", JSON.stringify(response.data.user));
                     console.log("Usuario guardado en el contexto y en el local storage", response.data.user);
                     setServerResponse("Inicio de sesión exitoso. Redirigiendo...");
-                    setTimeout(() => navigate("/busqueda-con-registro"), 1000);
+                    showWelcomeBackToast();
+                    setTimeout(() => navigate("/busqueda-con-registro"), 2000);
                 } else {
                     setServerResponse(response.data.message || "Credenciales incorrectas.");
                 }
@@ -112,6 +115,7 @@ export default function Login() {
                     <button type="submit">Continuar</button>
                 </form>
                 {serverResponse && <p className="server-response">{serverResponse}</p>}
+                <ToastContainer />
                 <p>
                     ¿No tienes una cuenta? Da click <Link to={"/"} className="login-link">aquí</Link>
                 </p>

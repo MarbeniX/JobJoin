@@ -73,3 +73,14 @@
     border-radius: 0.5rem;
     color: #023336;
 }
+/*Mensaje codigo incorrecto*/
+.MensajeCodigoIncorrecto-text{
+    font-size: small;
+    color: red;
+}
+/*Mensaje codigo correcto*/
+.MensajeCodigoCorrecto-text{
+    font-size: small;
+    color: green;
+    white-space: nowrap;
+}

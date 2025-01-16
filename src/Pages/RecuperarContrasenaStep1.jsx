@@ -1,11 +1,13 @@
-
 import "../Css/RecuperarContrasena.css"
 import formulario from "../Images/formulario.png";
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from "react";
 import Header from "../Components/Headers/HeaderRecuperarContraseña";
 import axios from "axios";
-
+import { ToastContainer } from 'react-toastify';
+import { showIncorrectCodeToast } from '../Messages/MensajeCodigoIncorrecto';
+import { showCorrectCodeToast } from '../Messages/MensajeConfirmaciónReenvioCodigo';
+import 'react-toastify/dist/ReactToastify.css';
 
 function RecuperarContrasena() {
     const [email, setEmail] = useState("");
@@ -17,50 +19,26 @@ function RecuperarContrasena() {
         navigate('/recuperarContrasena');
     };
 
-    const handleReenviarCodigo= async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post("http://localhost:5000/users/crearNuevaContrasena", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ userId: user.idUsuario, nuevaContraseña: password }),
-            });
-
-            const data = await response.json();
-            if (response.ok) {
-                alert(data.message);
-            } else {
-                alert(data.message || "Error al actualizar la contraseña");
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("Hubo un problema al conectarse al servidor");
-        }
-    };
-
     // Función para enviar el token al backend
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        if(!token){
-            setMessage("Debes ingresar un código de verificación.");
-            return;
-        }
-
         try {
             const response = await axios.post("http://localhost:5000/users/recuperarContrasenaStep1", {
                 token: token  // Enviar el token recibido
             });
 
             setMessage(response.data.message);
-            if(response.data.redirectTo){
-                navigate("/crear-nueva-contrasena");
+            if (response.data.redirectTo) {
+                showCorrectCodeToast();
+                setTimeout(() => {
+                    navigate("/crear-nueva-contrasena");
+                }, 1500); // 1.5 segundos
+            }else{
+                showIncorrectCodeToast();
             }
-
         } catch (error) {
-            setMessage(error.response?.data?.message || "Hubo un error al restablecer la contraseña.");
+            setMessage("Error al verificar el token. Inténtalo nuevamente.");
+            showIncorrectCodeToast();
         }
     };
         
@@ -81,20 +59,13 @@ function RecuperarContrasena() {
                         <form>
                             <div className="form-group">
                                 <input type="text" 
-                                       placeholder="Escribe el código que enviamos a tu correo" 
-                                       required
-                                       value={token}
-                                       onChange={(e) => setToken(e.target.value)}
+                                        placeholder="Escribe el código que enviamos a tu correo" 
+                                        required
+                                        value={token}
+                                        onChange={(e) => setToken(e.target.value)}
                                     />
                             </div>
                             <div className="links-container">
-                                <button 
-                                    type="button"
-                                    onClick={handleReenviarCodigo} 
-                                    className="left-link"
-                                    >Reenviar código        
-                                </button>
-
                                 <button 
                                     onClick={handleChange} 
                                     className="right-link"
@@ -111,6 +82,7 @@ function RecuperarContrasena() {
                     </div>
                 </div>
             </main>
+            <ToastContainer/>
         </div>
     );
 }

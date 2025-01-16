@@ -1,32 +1,33 @@
+import React from 'react';
 import '../Css/MensajeBienvenidaCuentaNueva.css';
 import CandadoIcon from "../Images/CandadoIcon.png";
-import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function MensajeReenviarCodigo() {
-
-    const navigate = useNavigate();
-    
-    const handleLoginClick = () => {
-        navigate('/login');
-    };
-
-    const handleSignupClick = () => {
-        navigate('/');
-    };
-
+const MensajeContraseñaActualizada = ({ onClose }) => {
     return (
-<div className="CuentaNueva-div">
+        <div className="CuentaNueva-div">
             <div className="CuentaNueva-inicio">
-                <img src={CandadoIcon} alt="HappyGreenFace" className='CandadoIcon'/>
+                <img src={CandadoIcon} alt="CandadoIcon" className='CandadoIcon'/>
                 <div className="CuentaNueva-mensaje">
                     <h1>Contraseña actualizada</h1>
                     <p>Hemos actualizado su contraseña</p>
                 </div>
             </div>
-            <div className="CuentaNueva-botones">
-                <button className="CN-B-salir" onClick={handleSignupClick}>Salir</button>
-                <button className="CN-B-iniciar" onClick={handleLoginClick}>Iniciar sesión</button>
-            </div>
         </div>
-    )
-}
+    );
+};
+
+export const showUpdatedPassword = () => {
+    toast(<MensajeContraseñaActualizada onClose={() => toast.dismiss()} />, {
+        position: "top-right",
+        autoClose: 3000, // Cerrar automáticamente después de 3 segundos
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });
+};
+
+export default MensajeContraseñaActualizada;

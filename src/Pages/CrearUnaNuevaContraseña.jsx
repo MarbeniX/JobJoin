@@ -4,6 +4,8 @@ import formulario from "../Images/formulario.png";
 import { useState } from "react";
 import { useUserContext } from '../UserProvider/UserProvider.jsx';
 import axios from "axios";
+import { ToastContainer } from "react-toastify";
+import { showUpdatedPassword } from "../Messages/MensajeContraseñaActualizada.jsx";
 
 export default function CrearNuevaContraseña() {
     const { user } = useUserContext();
@@ -26,10 +28,12 @@ export default function CrearNuevaContraseña() {
     
             // Respuesta exitosa
             if (response.status === 200) {
-                alert(response.data.message);
-                window.location.href = response.data.redirectTo; // Redirigir al login
+                showUpdatedPassword();
+                setTimeout(() => {
+                    window.location.href = response.data.redirectTo; // Redirigir al login
+                }, 1200); // Esperar 1.5 segundos
             } else {
-                alert(response.data.message || "Error al actualizar la contraseña");
+                setMessage(response.data.message);
             }
         } catch (error) {
             console.error("Error:", error);
@@ -65,6 +69,7 @@ export default function CrearNuevaContraseña() {
                                 <button type="submit">Actualizar contraseña</button>
                             </div>
                         </form>
+                        <ToastContainer />
                     </div>
                 </div>
             </main>

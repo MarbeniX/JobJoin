@@ -1,34 +1,34 @@
+import React from 'react';
 import '../Css/MensajeBienvenidaCuentaNueva.css';
-import MailIcon from "../Images/MailIcon.png";
+import ErrorIcon from "../Images/IniciaSesiónParaContinuar.png";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-export default function MensajeReenviarCodigo() {
+const MensajeCodigoCorrecto = ({ onClose }) => {
     return (
-        <div className="CuentaNueva-div">
-            <div className="CuentaNueva-inicio">
-                <img src={MailIcon} alt="HappyGreenFace" className='MailIcon'/>
-                <div className="CuentaNueva-mensaje">
-                    <h1>Se ha reenviado un código</h1>
-                    <p>Se ha enviado otro código de verificación a</p>
-                    <p className='CorreoUsuario'>correo@email.com</p>
+        <div className="ConfirmarGuardarCambios-div">
+            <div className="ConfirmarGuardarCambios-inicio">
+                <div>
+                    <img src={ErrorIcon} alt="ErrorIcon" className='ErrorIcon'/>
+                </div>
+                <div className="MensajeCodigoCorrecto-text">
+                    <h1>Codigo correcto</h1>
                 </div>
             </div>
-            <div className="MRBotones">
-                <button className="CN-B-iniciar">Aceptar</button>
-            </div>
         </div>
-    )
-}
-export const showWelcomeToast = () => {
-    toast(<MensajeReenviarCodigo />, {
+    );
+};
+
+export const showCorrectCodeToast = () => {
+    toast(<MensajeCodigoCorrecto onClose={() => toast.dismiss()} />, {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: false, // No cerrar automáticamente
         hideProgressBar: true,
-        closeOnClick: true,
+        closeOnClick: false,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
     });
 };
+
+export default MensajeCodigoCorrecto;

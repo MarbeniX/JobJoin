@@ -4,7 +4,6 @@ import RecuperarContrasenaStep1 from "./RecuperarContrasenaStep1"
 import MensajeBienvenidaCuentaNueva from "../Messages/MensajeBienvenidaCuentaNueva"
 import BuscarSinRegistro from "./BuscarSinRegisitro"
 import MensajeReenviarCodigo from "../Messages/MensajeReenviarCodigo"
-import MensajeConfirmaciónReenvioCodigo from "../Messages/MensajeConfirmaciónReenvioCodigo"
 import MensajeCodigoIncorrecto from "../Messages/MensajeCodigoIncorrecto"
 import MensajeContraseñaActualizada from "../Messages/MensajeContraseñaActualizada"
 import CrearNuevaContraseña from "./CrearUnaNuevaContraseña"
@@ -66,7 +65,6 @@ export default function App() {
                 <Route path="/bienvenida-cuenta-nueva" element={<MensajeBienvenidaCuentaNueva />} />
                 <Route path="/buscar-sin-registro" element={<BuscarSinRegistro />} />
                 <Route path="/reenviar-codigo" element={<MensajeReenviarCodigo />} />
-                <Route path="/confirmacion-reenvio-codigo" element={<MensajeConfirmaciónReenvioCodigo />} />
                 <Route path="/codigo-incorrecto" element={<MensajeCodigoIncorrecto />} />
                 <Route path="/cancelar-servicio" element={<CancelarServicioForm />} />
                 <Route path="/servicio-cancelado" element={<MensajeServicioCancelado />} />

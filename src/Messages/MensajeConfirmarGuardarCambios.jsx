@@ -1,11 +1,11 @@
 import React from 'react';
 import '../Css/MensajeBienvenidaCuentaNueva.css';
 import ErrorIcon from "../Images/IniciaSesiónParaContinuar.png";
-import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
-export default function MensajeConfirmarGuardarCambios() {
+const MensajeConfirmarGuardarCambios = ({ onClose }) => {
     return (
         <div className="ConfirmarGuardarCambios-div">
             <div className="ConfirmarGuardarCambios-inicio">
@@ -18,16 +18,16 @@ export default function MensajeConfirmarGuardarCambios() {
                 </div>
             </div>
             <div className="ConfirmarGuardarCambios-botones">
-                <Link to="/perfil-trabajador-comentarios" className="CN-B-iniciar">Guardar cambios</Link>
+                <Link to="/perfil-trabajador-comentarios" className="CN-B-iniciar" onClick={onClose}>Guardar cambios</Link>
             </div>
         </div>
     );
-}
+};
 
 export const showConfirmSaveToast = () => {
-    toast(<MensajeConfirmarGuardarCambios />, {
+    toast(<MensajeConfirmarGuardarCambios onClose={() => toast.dismiss()} />, {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 3000, // Cerrar automáticamente después de 3 segundos
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
@@ -35,3 +35,5 @@ export const showConfirmSaveToast = () => {
         progress: undefined,
     });
 };
+
+export default MensajeConfirmarGuardarCambios;

@@ -4,6 +4,11 @@ import axios from 'axios';
 import Header from '../Components/Headers/Header.jsx';
 import formulario from '../Images/formulario.png';
 import '../Css/RecuperarContrasena.css';
+import { ToastContainer } from 'react-toastify';
+import { showInvalidEmailToast } from '../Messages/MensajeCorreoInvalido';
+import { showValidEmailToast } from '../Messages/MensajeCorreoValido';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function RecuperarContrasena() {
     const [email, setEmail] = useState('');
@@ -17,8 +22,19 @@ export default function RecuperarContrasena() {
                 correo: email,
             });
             setMessage(response.data.message);
+            if (response.data.message === "Correo enviado correctamente") {
+                showValidEmailToast();
+                const timer = setTimeout(() => {
+                    navigate("/recuperarContrasenaStep1"); // Cambia "/otra-pagina" por la ruta a la que deseas redirigir
+                }, 1200); // 1.5 segundos
+
+                return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+            } else {
+                showInvalidEmailToast();
+            }
         } catch (error) {
             setMessage(error.response.data.message);
+            showInvalidEmailToast();
         }
     };
 
@@ -26,7 +42,7 @@ export default function RecuperarContrasena() {
         if (message === "Correo enviado correctamente") {
             const timer = setTimeout(() => {
                 navigate("/recuperarContrasenaStep1"); // Cambia "/otra-pagina" por la ruta a la que deseas redirigir
-            }, 2000); // 2 segundos
+            }, 1500); // 2 segundos
 
             return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
         }
@@ -59,10 +75,10 @@ export default function RecuperarContrasena() {
                                 <Link type="submit" onClick={handleSubmit}>Enviar código</Link>
                             </div>
                         </form>
-                        {message && <p>{message}</p>}
                     </div>
                 </div>
             </main>
+            <ToastContainer />
         </div>
     );
 }

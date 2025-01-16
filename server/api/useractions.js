@@ -253,6 +253,7 @@ router.post("/recuperarContrasena", (req, res) => {
                                 }
                                 console.log("Correo de recuperación enviado correctamente.");
                                 res.status(200).send({ message: "Correo enviado correctamente" });
+                                userId: row.idUsuario
                         });
                     });
                 });

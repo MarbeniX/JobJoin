@@ -84,3 +84,31 @@
     color: green;
     white-space: nowrap;
 }
+/*Mensaje cancelar cambios*/
+.MensajeCancelarGuardar-div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+.MensajeCancelarGuardar-inicio{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+}
+.MensajeCancelarGuardar-mensaje{
+    font-size: small;
+}
+.MensajeCancelarGuardar-CajaBotones{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.MensajeCancelarGuardar-CajaBotones > button, .MensajeCancelarGuardar-CajaBotones > a{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #F3FDFD;
+    color: #023336;
+    font-size: small;
+}

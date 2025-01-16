@@ -6,6 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { ToastContainer } from 'react-toastify';
 import { showConfirmSaveToast } from '../Messages/MensajeConfirmarGuardarCambios';
+import { showExitConfirmationToast } from "../Messages/MensajeEstasSeguroDeSalir";
 import 'react-toastify/dist/ReactToastify.css';
 import FullProfilePicture from "../Images/PerfilTrabajador.png"
 
@@ -52,6 +53,9 @@ export default function CrearPerfilTrabajador() {
     const handleSaveChanges = () => {
         showConfirmSaveToast();
     };
+    const handleCancelChanges = () => {
+        showExitConfirmationToast();
+    }
 
     return (
         <>
@@ -113,7 +117,7 @@ export default function CrearPerfilTrabajador() {
                     />
 
                     <div className="CrearPerfilTrabajador-servicio-item-titulo-2">
-                        <button type="button" className="CrearPerfilTrabajador-button1">
+                        <button type="button" className="CrearPerfilTrabajador-button1" onClick={handleCancelChanges}>
                             Cancelar
                         </button>
                         <button type="submit" className="CrearPerfilTrabajador-button2" onClick={handleSaveChanges}>

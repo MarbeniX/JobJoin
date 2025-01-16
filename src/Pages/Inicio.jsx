@@ -90,7 +90,6 @@ export default function Inicio() {
             setServerResponse("Por favor, completa todos los campos correctamente.");
         }
     };
-
     return (
         <div className="inicio-main-div">
             <Header />

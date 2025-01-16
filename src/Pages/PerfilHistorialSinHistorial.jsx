@@ -1,19 +1,38 @@
 import Header from "../Components/Headers/HeaderSesiónIniciada"
 import Footer from "../Components/Footer"
-import FullProfilePicture from "../Images/FullProfilePicture.png"
+import FullProfilePicture from "../Images/PerfilTrabajador.png"
 import RegistroDeServicios from "../Components/RegistroDeServicios"
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../Css/PerfilHistorialSinHIstorial.css"
+import { useNavigate } from "react-router-dom";
+
+{/*;*/}
 
 export default function PerfilHistorialSinHistorial(){
     const [activeTab, setActiveTab] = useState("historial");
+    const navigate = useNavigate();
+    const [userData, setUserData] = useState({nombre: "",correo:""});
+
+    useEffect(() => {
+        const storedData = localStorage.getItem("user");
+        console.log("storedData: ", storedData);
+        if(storedData){
+            const parsedData = JSON.parse(storedData);
+            setUserData({nombre: parsedData.nombre || "",
+                        correo: parsedData.correo || "",
+            });
+        }
+    }, []);
 
     const showHistorial = () => {
         setActiveTab("historial");
     }
     const showConfiguracion = () => {
         setActiveTab("configuracion");
+    }
+    const handleSearch = () => {  //Redirige a la página de búsqueda
+        navigate("/busqueda-con-registro");
     }
 
     return(
@@ -24,8 +43,8 @@ export default function PerfilHistorialSinHistorial(){
                 <div className="perfilHistorial-datos">
                     <img src={FullProfilePicture} alt="FullProfilePicture" />
                     <div className="perfilHistorial-datos-info">
-                        <h5>Melissa Nuñez</h5>
-                        <h6>melissa@email.com</h6>
+                        <h5>{userData.nombre}</h5>
+                        <h6>{userData.correo}</h6>
                     </div>
                     <button>Editar información</button>
                 </div>
@@ -40,7 +59,7 @@ export default function PerfilHistorialSinHistorial(){
                                 <h2>¡Aún no tienes historial!</h2>
                                 <p>Empieza a aprovechar al máximo JobJoin y contrata a los mejores</p>
                             </div>
-                            <button className="perfilHistorial-historial-registro-button">Buscar un servicio</button>
+                            <button className="perfilHistorial-historial-registro-button" onClick={handleSearch}>Buscar un servicio</button>
                             {/*Todo este div se genera en caso de que si haya un registro, en caso de que no se renderiza el siguiente div mayor de abajo perfilHistorialSinHistorial-configuración  */}
                             <div className="perfilHistorial-historial-registro-registros">
                                 <div className="perfilHistorialSinHistorial-registros">

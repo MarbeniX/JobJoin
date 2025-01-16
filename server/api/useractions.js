@@ -221,10 +221,18 @@ router.post("/recuperarContrasena", (req, res) => {
                         const recoveryLink = `http://localhost:5173/recuperarContrasenaStep1`;
                         // Configuración de Nodemailer
                         const mailOptions = {
-                            from: 'jobjoin.help@gmail.com',
-                            to: correo,
-                            subject: 'Recuperación de Contraseña',
-                            text: `Haz clic en el siguiente enlace para restablecer tu contraseña: ${recoveryLink} y coloca el siguiente token: ${token} `
+                            from: 'jobjoin.help@gmail.com', 
+                            to: correo, subject: 'Recupera tu Contraseña de JobJoin', 
+                            html: `<div style="text-align: center;">
+                                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/2q5WDkM/NaN.jpg" alt="NaN" border="0" style="width:250px; height auto;" > </a>
+                                        <p> <a href="${recoveryLink}"> Haz clic aquí </a> o ve al siguiente enlace para restablecer tu contraseña:<br> ${recoveryLink}</p> 
+                                        <p> y pega este código:<br> ${token}</p>
+                                        <br> <p>Si no solicitaste un cambio de contraseña, ignora este mensaje.</p>
+                                        <div  style "text-align: left;"> <br> <p>Gracias por usar JobJoin.</p> </div>
+                                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/PN2CKQS/Footer.png" alt="Footer" border="0" style="width:250px; height auto;" ></a>
+                                    </div
+                            
+                            <br> <br>`
                         };
                         //Enviar el correo
                         transporter.sendMail(mailOptions, (error) => {

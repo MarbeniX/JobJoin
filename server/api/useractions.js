@@ -163,8 +163,10 @@ router.post("/login", (req, res) => {
 
 // Endpoint para obtener todos los usuarios
 router.get("/usuarios", (req, res) => {
-    const query = "SELECT * FROM Usuario"; //Modificar segun tu necesidad
-
+    const query = "SELECT * FROM Empleado"; //Modificar segun tu necesidad
+    {/* SELECT * FROM Empleado */}
+    {/* SELECT * FROM Usuario */}
+    {/* PRAGMA table_info(Empleado) */}
     db.all(query, [], (err, rows) => {
         if (err) {
             res.status(500).send({ success: false, message: "Error interno del servidor" });

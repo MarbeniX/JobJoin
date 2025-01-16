@@ -288,8 +288,6 @@ router.post("/crearNuevaContrasena", (req, res) => {
     const { userId, nuevaContraseña } = req.body;
     console.log("Solicitud recibida para cambiar contraseña"); // Log inicial
     console.log("Datos recibidos:", { userId, nuevaContraseña });
-    console.log("Solicitud recibida para cambiar contraseña"); // Log inicial
-    console.log("Datos recibidos:", { userId, nuevaContraseña }); 
 
     const query = `
         SELECT * FROM Usuario

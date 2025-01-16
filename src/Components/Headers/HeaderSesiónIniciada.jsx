@@ -5,14 +5,25 @@ import DownwardRow from "../../Images/DownwardRow.png";
 import "../../Css/Headers&Footer.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useUserContext } from "../../UserProvider/UserProvider";
+
 
 export default function HeaderSesiónIniciada(){
     const navigate = useNavigate();
     const [menuVisible, setMenuVisible] = useState(false);
+    const { user, setUser } = useUserContext();
 
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);
     }
+
+    const handleLogout = () => {
+        //Limpia el usuario del contexto y del localStorage
+        setUser(null);
+        localStorage.removeItem("user");
+        //Redirige a la página de inicio
+        navigate("/login");
+    };
 
     return(
         <div className="header-sesion-iniciada">
@@ -32,7 +43,7 @@ export default function HeaderSesiónIniciada(){
                     <a href="/perfil-historial-sin-historial">Mi perfil personal</a>
                     <a href="/inicio-perfil-trabajador">Mi perfil de trabajador</a>
                     <a>Centro de ayuda</a>
-                    <a>Cerrar sesión</a>
+                    <a onClick={handleLogout}>Cerrar sesión</a>
                 </div>
             )}
         </div>

@@ -19,7 +19,7 @@ export default function BuscarSinRegistro() {
 
     if(!user){
         //Redirigir a la página de inicio de sesión
-        return <Navigate to="/iniciar-sesion-para-continuar" />;
+        return <Navigate to="/login" />;
     }
 
     return(

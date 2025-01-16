@@ -11,33 +11,32 @@ export default function CrearNuevaContraseña() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+    
         if (!user) {
             alert("Usuario no autenticado");
             return;
         }
-
+    
         try {
+            // Realiza la solicitud POST directamente con los datos del cuerpo
             const response = await axios.post("http://localhost:5000/users/crearNuevaContrasena", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ userId: user.idUsuario, nuevaContraseña: password }),
+                userId: user.idUsuario,
+                nuevaContraseña: password,
             });
-
-            const data = await response.json();
-            if (response.ok) {
-                alert(data.message);
+    
+            // Respuesta exitosa
+            if (response.status === 200) {
+                alert(response.data.message);
+                window.location.href = response.data.redirectTo; // Redirigir al login
             } else {
-                alert(data.message || "Error al actualizar la contraseña");
+                alert(response.data.message || "Error al actualizar la contraseña");
             }
         } catch (error) {
             console.error("Error:", error);
             alert("Hubo un problema al conectarse al servidor");
         }
     };
-
+    
     return (
         <div className="recuperar-contraseña-div">
             <Header />

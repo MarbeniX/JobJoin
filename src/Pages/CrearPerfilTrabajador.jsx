@@ -1,55 +1,47 @@
-import Header from "../Components/Headers/HeaderSesiónIniciada"
-import Footer from "../Components/Footer"
-import FullProfilePicture from "../Images/FullProfilePicture.png"
-import DineroIcon from "../Images/DineroIcon.png"
-import "../Css/CrearPerfilTrabajador.css"
-import { useUserContext } from "../UserProvider/UserProvider"
-import { useState } from "react"
-import axios from "axios"
+import Header from "../Components/Headers/HeaderSesiónIniciada";
+import Footer from "../Components/Footer";
+import "../Css/CrearPerfilTrabajador.css";
+import { useUserContext } from "../UserProvider/UserProvider";
+import { useState } from "react";
+import axios from "axios";
 import { ToastContainer } from 'react-toastify';
 import { showConfirmSaveToast } from '../Messages/MensajeConfirmarGuardarCambios';
 import 'react-toastify/dist/ReactToastify.css';
+import FullProfilePicture from "../Images/PerfilTrabajador.png"
 
 export default function CrearPerfilTrabajador() {
     const { user } = useUserContext();
-    const [fotoPerfil, setFotoPerfil] = useState(""); // Para almacenar la imagen
     const [location, setLocation] = useState("");
-    const [service, setService] = useState("");
-    const [tariff, setTariff] = useState("");
+    const [habilidades, setService] = useState("");
+    const [tarifaPorHora, setTariff] = useState("");
     const [phone, setPhone] = useState("");
     const [description, setDescription] = useState("");
 
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            setFotoPerfil(file);
-        }
-    };
     // Función para enviar los datos del perfil al servidor
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        const formData = new FormData();
-        {/*formData.append("fotoPerfil", fotoPerfil);*/}
-        formData.append("location", location);
-        formData.append("service", service);
-        formData.append("tariff", tariff);
-        formData.append("phone", phone);
-        formData.append("description", description);
-        formData.append("userId", user.idUsuario); // Suponiendo que el ID del usuario se guarda en el contexto
+
+        const profileData = {
+            userId: user.idUsuario, // ID del usuario desde el contexto
+            location,
+            habilidades,
+            tarifaPorHora,
+            phone,
+            description
+        };
 
         try {
             // Enviar los datos al servidor
-            const response = await axios.post("http://localhost:5000/users/crear-trabajador", formData, {
+            const response = await axios.post("http://localhost:5000/trabajador/crear-trabajador", profileData, {
                 headers: {
-                    "Content-Type": "multipart/form-data" // Especificar que estamos enviando FormData
+                    "Content-Type": "application/json"
                 }
+                
             });
-            if (response.data.success) {
-                // Mostrar mensaje de éxito
+            //Verificar si la respuesta fue exitosa
+            if (response.data.success === "Perfil creado correctamente") {
                 console.log("Perfil creado correctamente.");
             } else {
-                // Mostrar mensaje de error
                 console.log("Hubo un error al crear el perfil.");
             }
         } catch (error) {
@@ -57,19 +49,16 @@ export default function CrearPerfilTrabajador() {
         }
     };
 
-    // Mostrar mensaje de confirmación al guardar los cambios
     const handleSaveChanges = () => {
         showConfirmSaveToast();
     };
+
     return (
-    <>
+        <>
             <Header />
             <div className="CrearPerfilTrabajador">
-                <div className="CrearPerfilTrabajador-header">
-                    <img src={fotoPerfil || FullProfilePicture} alt="Foto de perfil" className="fotoPerfil" />
-                    <input type="file" accept="image/*" onChange={handleFileChange} className="file-input" />
-                    <h1>{user.nombre || "Melissa Nuñez"}</h1>
-                </div>
+            <img src={FullProfilePicture} alt="Foto de perfil" className="fotoPerfil" />
+                <h1>{user.nombre || "Nombre del usuario"}</h1>
             </div>
             <form className="CrearPerfilTrabajador-form" onSubmit={handleSubmit}>
                 <p className="CrearPerfilTrabajador-p1">Campos obligatorios*</p>
@@ -83,7 +72,7 @@ export default function CrearPerfilTrabajador() {
 
                 <p className="CrearPerfilTrabajador-titulo">Servicio que se ofrece*</p>
                 <div className="CrearPerfilTrabajador-profesiones">
-                    {["Albañileria", "Carpinteria", "Cuidado infantil", "Electricidad", "Jardinería", "Limpieza", "Plomería", "Tutoría", "Reparaciones", "Otro"].map((profesion) => (
+                    {["Albañilería", "Carpintería", "Cuidado infantil", "Electricidad", "Jardinería", "Limpieza", "Plomería", "Tutoría", "Reparaciones", "Otro"].map((profesion) => (
                         <div className="CrearPerfilTrabajador-profesiones-item" key={profesion}>
                             <input
                                 type="radio"
@@ -98,37 +87,31 @@ export default function CrearPerfilTrabajador() {
 
                 <div className="CrearPerfilTrabajador-servicios">
                     <div className="CrearPerfilTrabajador-servicio-item">
-                        <div className="CrearPerfilTrabajador-servicio-item-titulo">
-                            <p className="CrearPerfilTrabajador-titulo">Tarifa desde*</p>
-                            <div className="CrearPerfilTrabajador-input-icon">
-                                <img src={DineroIcon} alt="Signo de dolares" />
-                                <input
-                                    placeholder="XXXX"
-                                    value={tariff}
-                                    onChange={(e) => setTariff(e.target.value)}
-                                    className="CrearPerfilTrabajador-input"
-                                />
-                            </div>
-                        </div>
-                        <div className="CrearPerfilTrabajador-servicio-item-titulo">
-                            <p className="CrearPerfilTrabajador-titulo">Número de teléfono</p>
-                            <input
-                                placeholder="XXXX-XXXX-XXXX"
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                                className="CrearPerfilTrabajador-input"
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <p className="CrearPerfilTrabajador-titulo">Descripción del servicio*</p>
+                        <p className="CrearPerfilTrabajador-titulo">Tarifa desde*</p>
                         <input
-                            placeholder="Incluye detalles sobre tu trabajo y habilidades"
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
+                            placeholder="XXXX"
+                            value={tarifaPorHora}
+                            onChange={(e) => setTariff(e.target.value)}
+                            className="CrearPerfilTrabajador-input"
+                        />
+
+                        <p className="CrearPerfilTrabajador-titulo">Número de teléfono</p>
+                        <input
+                            placeholder="XXXX-XXXX-XXXX"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
                             className="CrearPerfilTrabajador-input"
                         />
                     </div>
+
+                    <p className="CrearPerfilTrabajador-titulo">Descripción del servicio*</p>
+                    <input
+                        placeholder="Incluye detalles sobre tu trabajo y habilidades"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        className="CrearPerfilTrabajador-input"
+                    />
+
                     <div className="CrearPerfilTrabajador-servicio-item-titulo-2">
                         <button type="button" className="CrearPerfilTrabajador-button1">
                             Cancelar
@@ -142,5 +125,5 @@ export default function CrearPerfilTrabajador() {
             </form>
             <Footer />
         </>
-    )
+    );
 }

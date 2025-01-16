@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import db from "./db/connection.js"
 import userActions from "./api/useractions.js"
 import userActions2 from "./api/useractions2.js"
+import userActions3 from "./api/useractions3.js"
 
 // Configuración de Express
 const app = express();
@@ -39,13 +40,17 @@ app.use(cors());
     db.run(`
         CREATE TABLE IF NOT EXISTS Empleado (
             idEmpleado INTEGER PRIMARY KEY,
+            location TEXT NOT NULL,
             habilidades TEXT NOT NULL,
-            calificacionesPromedio REAL,
-            disponibilidad TEXT,
-            tarifaPorHora REAL NOT NULL,
+            calificacionesPromedio REAL DEFAULT 0,
+            disponibilidad TEXT DEFAULT 'disponible',
+            tariff REAL NOT NULL,
+            phone TEXT NOT NULL,
+            description TEXT NOT NULL,
             FOREIGN KEY (idEmpleado) REFERENCES Usuario(idUsuario)
         )
     `);
+
 
     // Tabla Empleador
     db.run(`
@@ -112,6 +117,7 @@ app.use(express.json());
 // Endpoint para las acciones del usuario
 app.use('/users', userActions);
 app.use('/password', userActions2);
+app.use('/trabajador', userActions3);
 // Iniciar servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);

@@ -152,18 +152,20 @@ router.post("/login", (req, res) => {
     db.get(query, [correo, contraseña], (err, row) => {
         if (err) {
             res.status(500).send({ success: false, message: "Error interno del servidor" });
+            console.log("Error interno del servidor")
         } else if (row) {
             res.status(200).send({ success: true, message: "Inicio de sesión exitoso", user: row });
+            console.log(`INFO: El usuario ${correo}, inicio sesión correctamente.`)
         } else {
             res.status(401).send({ success: false, message: "Credenciales incorrectas" });
+            console.log(`INFO: El usuario ${correo}, ingreso credenciales incorrectas.`)
         }
     });
-    console.log(`INFO: El usuario ${correo}, inicio sesión correctamente.`)
 });
 
 // Endpoint para obtener todos los usuarios
 router.get("/usuarios", (req, res) => {
-    const query = "SELECT * FROM Empleado"; //Modificar segun tu necesidad
+    const query = "SELECT * FROM Usuario"; //Modificar segun tu necesidad
     {/* SELECT * FROM Empleado */}
     {/* SELECT * FROM Usuario */}
     {/* PRAGMA table_info(Empleado) */}

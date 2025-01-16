@@ -4,6 +4,9 @@
     align-items: center;
     justify-content: center;
 }
+.perfilHistorialSinHistorial > h1{
+    font-size: 3rem;
+}
 h1{
     color: #023336;
     margin: 4%;
@@ -67,11 +70,20 @@ h1{
     gap: 1rem;
     padding: 3%;
 }
-.perfilHistorial-historial-menu h3{
+.perfilHistorial-historial-menu h3 {
     color: #023336;
     font-weight: 400;
     font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Añade una transición suave */
 }
+.perfilHistorial-historial-menu h3:hover {
+    color: #017374; /* Cambia el color al pasar el mouse */
+    background-color: #e0f7fa; /* Cambia el fondo al pasar el mouse */
+    transform: scale(1.05); /* Aumenta el tamaño del texto al pasar el mouse */
+    text-decoration: underline; /* Añade subrayado al pasar el mouse */
+}
+
 .perfilHistorial-historial-registro{
     display: flex;
     flex-direction: column;
